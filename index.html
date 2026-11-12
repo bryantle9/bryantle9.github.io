@@ -140,6 +140,11 @@
   .tags { display: flex; gap: 12px; margin-bottom: 18px; flex-wrap: wrap; }
   .tag { border: 1.5px solid var(--accent); color: var(--accent); font-weight: 600; font-size: 14px; padding: 6px 16px; border-radius: 999px; }
   .p-desc { font-size: 17px; color: var(--ink-soft); max-width: 460px; }
+  .p-link { display: inline-block; margin-top: 18px; font-weight: 600; color: var(--accent); text-decoration: underline; text-underline-offset: 4px; }
+  .bw-banner { display: block; border-radius: 10px; overflow: hidden; aspect-ratio: 5 / 3; background: #F1ECE4; border: 1px solid var(--line); }
+  .bw-banner img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+  .bw-banner:hover img { transform: scale(1.02); }
+  @media (prefers-reduced-motion: reduce) { .bw-banner img { transition: none; } }
 
   footer { text-align: center; padding: 60px 6vw 90px; }
   footer .end { font-family: 'Newsreader', serif; font-style: italic; font-size: 21px; margin-bottom: 10px; }
@@ -181,7 +186,7 @@
 <section id="work">
   <div class="work-head reveal">
     <h2 class="serif">Featured Projects</h2>
-    <div class="updated">Updated July 2026</div>
+    <div class="updated">Updated November 2026</div>
   </div>
 
   <div class="project reveal">
@@ -283,6 +288,21 @@
         <span class="tag">Product</span>
       </div>
       <p class="p-desc">Redesigns Din Tai Fung's handwritten paper ordering system into a guided QR-code digital menu, built from firsthand experience running food on the floor.</p>
+    </div>
+  </div>
+
+  <div class="project reveal">
+    <a class="bw-banner" href="by-witness.html" aria-label="Read the By Witness case study">
+      <img src="images/by-witness/reveal.png" alt="By Witness reveal screen, the player's sketch stamped Wrong Face next to the real robber">
+    </a>
+    <div class="project-info">
+      <h3 class="p-title serif">By Witness</h3>
+      <div class="tags">
+        <span class="tag">Game Design</span>
+        <span class="tag">UI/UX</span>
+      </div>
+      <p class="p-desc">A story driven game about a sketch artist in a corrupt Old West town. One leading question can put an innocent man on a wanted poster. I led a team of three and designed the core mechanics in Figma.</p>
+      <a class="p-link" href="by-witness.html">Read the case study &rarr;</a>
     </div>
   </div>
 </section>
