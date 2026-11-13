@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Ticket | Bryant Le</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23C0532D'/%3E%3Ctext x='32' y='45' font-family='Georgia, serif' font-style='italic' font-weight='700' font-size='36' fill='%23FBF8F1' text-anchor='middle'%3Eb.%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,500;0,600;0,700;0,800;1,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --cream: #FBF8F1; --ink: #1E1D19; --ink-soft: #6C6A5F; --line: #E3DECD; --accent: #C0532D; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--cream); color: var(--ink); font-family: 'Work Sans', sans-serif; line-height: 1.65; }
+  a { color: inherit; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  nav { position: sticky; top: 0; z-index: 50; background: var(--cream); display: flex; justify-content: space-between; align-items: center; padding: 28px 6vw; }
+  .logo { font-family: 'Newsreader', serif; font-weight: 800; font-size: 24px; text-decoration: none; }
+  .nav-links { display: flex; gap: 34px; font-size: 15px; }
+  .nav-links a { text-decoration: none; }
+  .nav-links a:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+  main { max-width: 820px; margin: 0 auto; padding: 20px 6vw 80px; }
+  .wide { width: min(1200px, 92vw); position: relative; left: 50%; transform: translateX(-50%); }
+  .back { display: inline-block; font-size: 15px; color: var(--ink-soft); text-decoration: none; margin-bottom: 28px; }
+  .back:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+  h1 { font-family: 'Newsreader', serif; font-weight: 800; font-size: clamp(44px, 7vw, 72px); line-height: 1.05; margin-bottom: 18px; }
+  .lede { font-size: clamp(19px, 2.4vw, 22px); color: var(--ink-soft); margin-bottom: 20px; }
+  .tags { display: flex; gap: 12px; margin-bottom: 36px; flex-wrap: wrap; }
+  .tag { border: 1.5px solid var(--accent); color: var(--accent); font-weight: 600; font-size: 14px; padding: 6px 16px; border-radius: 999px; }
+
+  figure { margin: 0 0 40px; }
+  figure img { display: block; width: 100%; height: auto; border-radius: 10px; background: #fff; border: 1px solid var(--line); }
+  figcaption { font-size: 14px; color: var(--ink-soft); margin-top: 10px; text-align: center; }
+
+  .facts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; border-top: 1.5px solid var(--ink); border-bottom: 1px solid var(--line); padding: 22px 0; margin-bottom: 56px; }
+  .facts dt { font-size: 13px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); font-weight: 600; margin-bottom: 4px; }
+  .facts dd { font-size: 15px; }
+  @media (max-width: 700px) { .facts { grid-template-columns: 1fr 1fr; } }
+
+  section { margin-bottom: 64px; }
+  h2 { font-family: 'Newsreader', serif; font-weight: 700; font-size: clamp(30px, 4vw, 40px); margin-bottom: 18px; }
+  h3 { font-family: 'Newsreader', serif; font-weight: 700; font-size: 24px; margin: 30px 0 10px; }
+  h3 .num { font-style: italic; color: var(--accent); margin-right: 6px; }
+  p { font-size: 17px; margin-bottom: 16px; }
+  ul { margin: 0 0 16px 22px; }
+  li { font-size: 17px; margin-bottom: 8px; }
+
+  .screen { display: grid; grid-template-columns: 260px 1fr; gap: 36px; align-items: center; margin: 34px 0; }
+  .screen img { width: 100%; height: auto; display: block; }
+  .screen h4 { font-family: 'Newsreader', serif; font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+  .screen h4 .num { font-style: italic; color: var(--accent); margin-right: 6px; }
+  @media (max-width: 640px) { .screen { grid-template-columns: 1fr; } .screen img { max-width: 260px; margin: 0 auto; } }
+
+  .note { border-left: 3px solid var(--accent); padding: 4px 0 4px 18px; color: var(--ink-soft); }
+
+  footer { text-align: center; padding: 40px 6vw 90px; border-top: 1px solid var(--line); }
+  footer .end { font-family: 'Newsreader', serif; font-style: italic; font-size: 21px; margin-bottom: 10px; }
+  footer a { display: inline-block; font-size: 16px; text-decoration: underline; text-underline-offset: 4px; margin: 0 10px 6px; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html">b.</a>
+  <div class="nav-links">
+    <a href="index.html#work">work</a>
+    <a href="resume.pdf" target="_blank" rel="noopener">resume</a>
+    <a href="#footer">contact me</a>
+  </div>
+</nav>
+
+<main>
+  <a class="back" href="index.html#work">&larr; Back to projects</a>
+
+  <h1>The Ticket</h1>
+  <p class="lede">A digital dine in menu for Din Tai Fung, built from what I see on every shift as a food runner. Guests scan a QR code, order in their own language, and a server confirms the order before it reaches the kitchen.</p>
+  <div class="tags">
+    <span class="tag">UI/UX</span>
+    <span class="tag">Product</span>
+  </div>
+
+  <figure class="wide">
+    <img src="images/the-ticket/all-screens.png" alt="All five screens of the digital menu side by side: language selection, appetizers, wontons, review order, and order submitted.">
+    <figcaption>The full ordering flow, from picking a language to order submitted.</figcaption>
+  </figure>
+
+  <dl class="facts">
+    <div><dt>Type</dt><dd>Personal project</dd></div>
+    <div><dt>Timeline</dt><dd>Summer 2026, updated November 2026</dd></div>
+    <div><dt>My role</dt><dd>Solo. Research, UX, and UI design</dd></div>
+    <div><dt>Tools</dt><dd>Figma</dd></div>
+  </dl>
+
+  <section>
+    <h2>The problem</h2>
+    <p>Din Tai Fung guests order on a paper sheet. They find the dish, write a number next to it, and hand it to their server. It sounds simple. On the floor, it breaks in a few ways I see all the time.</p>
+    <ul>
+      <li><strong>Similar items get mixed up.</strong> Spicy Wontons and Wonton Soup sit close together and look almost the same on paper. Guests mark the wrong one, and the wrong dish goes out.</li>
+      <li><strong>Handwriting is hard to read.</strong> A messy number turns a 1 into a 7, and nobody catches it until the food lands.</li>
+      <li><strong>Not every guest reads English.</strong> A lot of our guests are more comfortable in another language, and a paper sheet in one language leaves them guessing.</li>
+    </ul>
+    <p>As a food runner, I'm the one carrying the wrong dish to the table. I wanted to fix the problem where it starts, at the moment of ordering.</p>
+  </section>
+
+  <section>
+    <h2>Design decisions</h2>
+
+    <h3><span class="num">1.</span> Add digital, don't replace paper</h3>
+    <p>Some guests love the paper sheet, and it's part of the experience. So the QR menu sits next to it as an option. Guests who want it can use it. Guests who don't never have to.</p>
+
+    <h3><span class="num">2.</span> A server checks every order</h3>
+    <p>Orders don't go straight to the kitchen. They go to the server, who confirms them at the table. That keeps the human part of service and catches mistakes before they become wrong dishes.</p>
+
+    <h3><span class="num">3.</span> Photos and short descriptions</h3>
+    <p>Every item has a photo and one line about what it is. Spicy Wontons say "No broth." Wonton Soup says "clear broth with green onion." Two dishes that looked the same on paper now look clearly different.</p>
+
+    <h3><span class="num">4.</span> Language first</h3>
+    <p>The first screen asks guests to pick a language: English, Spanish, Japanese, Vietnamese, or Traditional Chinese. Everything after that is in the language they chose.</p>
+
+    <h3><span class="num">5.</span> Dietary info up front</h3>
+    <p>Badges mark guest favorites, gluten free, vegan, and vegetarian dishes. A note on the review screen reminds guests that the kitchen uses shared equipment, so no item is guaranteed allergen free.</p>
+  </section>
+
+  <section>
+    <h2>The flow</h2>
+
+    <div class="screen">
+      <img src="images/the-ticket/1-language.png" alt="Language selection screen with English selected and options for Spanish, Japanese, Vietnamese, and Traditional Chinese.">
+      <div><h4><span class="num">1.</span> Pick a language</h4><p>Guests choose their language before anything else, so the whole menu makes sense from the start.</p></div>
+    </div>
+
+    <div class="screen">
+      <img src="images/the-ticket/2-appetizers.png" alt="Appetizers screen showing table number, guest count, dietary badges, category tabs, and items with quantity controls.">
+      <div><h4><span class="num">2.</span> Browse the menu</h4><p>The top shows the guest name, table, and party size. Category tabs jump between sections. Each item has a photo, price, badges, and a quantity control.</p></div>
+    </div>
+
+    <div class="screen">
+      <img src="images/the-ticket/3-wontons.png" alt="Wontons screen with Shrimp and Kurobuta Pork Spicy Wontons, Chicken Spicy Wontons, and Wonton Soup, each with a photo and description.">
+      <div><h4><span class="num">3.</span> Tell similar dishes apart</h4><p>This is the screen that fixes the biggest mixup. Spicy Wontons and Wonton Soup sit in the same section, but the photos and descriptions make the difference obvious.</p></div>
+    </div>
+
+    <div class="screen">
+      <img src="images/the-ticket/4-review.png" alt="Review order screen listing each item with quantity, subtotal, taxes, total, and Submit to server and Edit order buttons.">
+      <div><h4><span class="num">4.</span> Review the order</h4><p>Guests see every item, quantity, and the total before sending. "Submit to server" makes it clear the order goes to a person first, not straight to the kitchen.</p></div>
+    </div>
+
+    <div class="screen">
+      <img src="images/the-ticket/5-confirmation.png" alt="Order submitted screen with a green checkmark, table number, order number, item count, total, and a back to main menu button.">
+      <div><h4><span class="num">5.</span> Confirmation</h4><p>Guests get an order number and a summary, plus a reminder that their server will confirm at the table. If they want more, they can go back to the menu.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>What's next</h2>
+    <ul>
+      <li>Test the flow with coworkers and a few guests, and see where they hesitate.</li>
+      <li>Compare how often orders go wrong on paper vs digital.</li>
+      <li>Add a way for guests to add items mid meal without starting over.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>What I learned</h2>
+    <ul>
+      <li><strong>The best problems are the ones you live.</strong> I didn't need to guess what goes wrong. I see it every shift.</li>
+      <li><strong>Small details prevent big mistakes.</strong> One line like "No broth" does more than a whole redesign of the layout.</li>
+      <li><strong>Keep the people in the loop.</strong> Server confirmation makes the tech support service instead of replacing it.</li>
+    </ul>
+  </section>
+</main>
+
+<footer id="footer">
+  <div class="end">Thanks for reading!</div>
+  <a href="mailto:bryantle2000@gmail.com">bryantle2000@gmail.com</a>
+  <a href="https://www.linkedin.com/in/le-bryant" target="_blank" rel="noopener">linkedin.com/in/le-bryant</a>
+</footer>
+
+</body>
+</html>
