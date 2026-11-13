@@ -23,35 +23,26 @@
   .glow { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -55%); width: 620px; height: 620px; background: radial-gradient(circle, var(--glow) 0%, rgba(127,176,160,0) 70%); opacity: 0.45; z-index: 0; pointer-events: none; }
   h1 { font-family: 'Newsreader', serif; font-style: italic; font-weight: 800; font-size: clamp(34px, 5vw, 48px); margin-bottom: 30px; position: relative; z-index: 1; }
 
-  .scene { width: min(500px, 88vw); aspect-ratio: 1.75 / 1; perspective: 1600px; position: relative; z-index: 1; }
-  .card { width: 100%; height: 100%; position: relative; transform-style: preserve-3d; transition: transform 0.7s cubic-bezier(.45,.05,.25,1); will-change: transform; }
-  .card.flipped { transform: rotateY(180deg); }
-  .card.flipped .front, .card:not(.flipped) .back { pointer-events: none; }
-  .face { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; border-radius: 14px; box-shadow: 0 20px 44px rgba(30,29,25,0.14), 0 2px 6px rgba(30,29,25,0.08); padding: 7% 8%; display: flex; flex-direction: column; }
-  .face-btn { all: unset; position: absolute; inset: 0; border-radius: 14px; cursor: pointer; z-index: 1; }
+  .scene { width: min(540px, 90vw); aspect-ratio: 1.75 / 1; perspective: 1200px; position: relative; z-index: 1; }
+  .card { width: 100%; height: 100%; border-radius: 6px; background: #F3EEE2; background-image: radial-gradient(rgba(120,100,70,0.05) 1px, transparent 1px); background-size: 3px 3px; box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset, 0 22px 46px rgba(30,29,25,0.16), 0 3px 8px rgba(30,29,25,0.10); padding: 6.5% 7.5%; display: flex; flex-direction: column; justify-content: space-between; color: #2A2823; transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); transition: transform 0.25s ease-out; will-change: transform; }
+  .raised { text-shadow: 0 1px 0 rgba(255,255,255,0.85), 0 -0.5px 0 rgba(0,0,0,0.12); }
+  .row { display: flex; justify-content: space-between; font-size: clamp(10px, 1.9vw, 12.5px); letter-spacing: 0.06em; }
+  .center { text-align: center; }
+  .name { font-family: 'Newsreader', serif; font-weight: 600; font-size: clamp(22px, 5vw, 34px); letter-spacing: 0.22em; text-transform: uppercase; margin-right: -0.22em; }
+  .title { font-family: 'Newsreader', serif; font-style: italic; font-size: clamp(13px, 2.6vw, 17px); margin-top: 6px; color: #4A473F; }
+  .focus { font-size: clamp(10px, 1.8vw, 12px); letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-top: 8px; font-weight: 600; }
+  .card a { text-decoration: none; border-bottom: 1px solid rgba(42,40,35,0.25); }
+  .card a:hover { color: var(--accent); border-bottom-color: var(--accent); }
 
-  .front { background: #FFFDF8; border: 1px solid var(--line); color: var(--ink); justify-content: space-between; transform: rotateY(0deg) translateZ(1px); }
-  .front::before { content: ""; position: absolute; inset: 10px; border: 1px solid var(--line); border-radius: 8px; pointer-events: none; }
-  .front .center { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
-  .front .name { font-family: 'Newsreader', serif; font-style: italic; font-weight: 800; font-size: clamp(34px, 8vw, 54px); line-height: 1; }
-  .front .rule { width: 44px; height: 2px; background: var(--accent); margin: 14px auto 12px; }
-  .front .role { font-size: clamp(11px, 2.2vw, 13px); letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
-  .front .foot { display: flex; justify-content: space-between; font-size: clamp(11px, 2vw, 13px); color: var(--ink-soft); }
+  .actions { display: flex; gap: 12px; margin-top: 30px; position: relative; z-index: 1; flex-wrap: wrap; justify-content: center; }
+  .btn { font: inherit; font-size: 15px; font-weight: 600; padding: 11px 20px; border-radius: 999px; text-decoration: none; cursor: pointer; border: 1.5px solid var(--ink); background: var(--ink); color: var(--cream); }
+  .btn.ghost { background: transparent; color: var(--ink); }
+  .btn:hover { background: var(--accent); border-color: var(--accent); color: var(--cream); }
+  @media (max-width: 480px) { .actions { gap: 8px; } .btn { font-size: 14px; padding: 9px 14px; } }
+  .under { margin-top: 18px; font-size: 14px; color: var(--ink-soft); position: relative; z-index: 1; text-align: center; }
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
 
-  .back { background: var(--ink); color: var(--cream); transform: rotateY(180deg) translateZ(1px); justify-content: space-between; }
-  .back .top { display: flex; justify-content: space-between; align-items: baseline; }
-  .back .mark { font-family: 'Newsreader', serif; font-style: italic; font-weight: 800; font-size: clamp(22px, 4vw, 30px); color: var(--accent); line-height: 1; }
-  .back .city { font-size: clamp(11px, 2vw, 13px); opacity: 0.6; }
-  .back .rows { display: flex; flex-direction: column; gap: clamp(10px, 3vw, 18px); }
-  .back .label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.16em; color: #E59A7C; font-weight: 600; margin-bottom: 2px; }
-  .back a { position: relative; z-index: 2; font-size: clamp(15px, 3vw, 19px); text-decoration: none; border-bottom: 1px solid rgba(251,248,241,0.35); padding-bottom: 1px; word-break: break-word; }
-  .back a:hover { border-bottom-color: var(--accent); color: #fff; }
-
-  .hint { margin-top: 26px; font-size: 14px; color: var(--ink-soft); position: relative; z-index: 1; min-height: 1.6em; }
-  .hint, .under { text-align: center; }
-  .under { margin-top: 6px; font-size: 14px; color: var(--ink-soft); position: relative; z-index: 1; }
-
-  @media (prefers-reduced-motion: reduce) { .card { transition: none; } }
+  @media (prefers-reduced-motion: reduce) { .card { transition: none; transform: none !important; } }
 </style>
 </head>
 <body>
@@ -69,59 +60,46 @@
   <div class="glow"></div>
   <h1>Let's talk.</h1>
 
-  <div class="scene">
+  <div class="scene" id="scene">
     <div class="card" id="card">
-      <div class="face front" id="front">
-        <button class="face-btn" id="flip" aria-label="Flip the card to see my email and LinkedIn"></button>
-        <div class="center">
-          <div class="name">bryant le</div>
-          <div class="rule"></div>
-          <div class="role">UX design and data</div>
-        </div>
-        <div class="foot"><span>Informatics, UW iSchool</span><span>bryantle.net</span></div>
+      <div class="row raised"><span>Seattle, WA</span><span><a href="index.html">bryantle.net</a></span></div>
+      <div class="center raised">
+        <div class="name">Bryant Le</div>
+        <div class="title">Informatics, University of Washington</div>
+        <div class="focus">UX design and data</div>
       </div>
-
-      <div class="face back" id="back" aria-hidden="true">
-        <button class="face-btn" id="unflip" tabindex="-1" aria-label="Flip the card back"></button>
-        <div class="top"><span class="mark">b.</span><span class="city">Seattle, WA</span></div>
-        <div class="rows">
-          <div>
-            <div class="label">Email</div>
-            <a href="mailto:bryantle2000@gmail.com" tabindex="-1">bryantle2000@gmail.com</a>
-          </div>
-          <div>
-            <div class="label">LinkedIn</div>
-            <a href="https://www.linkedin.com/in/le-bryant" target="_blank" rel="noopener" tabindex="-1">linkedin.com/in/le-bryant</a>
-          </div>
-        </div>
-      </div>
+      <div class="row raised"><a href="mailto:bryantle2000@gmail.com">bryantle2000@gmail.com</a><a href="https://www.linkedin.com/in/le-bryant" target="_blank" rel="noopener">linkedin.com/in/le-bryant</a></div>
     </div>
   </div>
 
-  <p class="hint" id="hint">Tap the card to flip it &#8635;</p>
+  <div class="actions">
+    <a class="btn" href="mailto:bryantle2000@gmail.com">Email me</a>
+    <button class="btn ghost" id="copy" type="button">Copy email</button>
+    <a class="btn ghost" href="https://www.linkedin.com/in/le-bryant" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
   <p class="under">Open to UX and data internships for summer 2027.</p>
+  <p class="sr" id="status" aria-live="polite"></p>
 </main>
 
 <script>
   const card = document.getElementById('card');
-  const back = document.getElementById('back');
-  const front = document.getElementById('front');
-  const flip = document.getElementById('flip');
-  const unflip = document.getElementById('unflip');
-  const hint = document.getElementById('hint');
-  const backFocusables = back.querySelectorAll('a, button');
-
-  function setFlipped(on) {
-    card.classList.toggle('flipped', on);
-    back.setAttribute('aria-hidden', String(!on));
-    front.setAttribute('aria-hidden', String(on));
-    flip.tabIndex = on ? -1 : 0;
-    backFocusables.forEach(el => { el.tabIndex = on ? 0 : -1; });
-    hint.innerHTML = on ? 'Tap the card again to flip it back &#8634;' : 'Tap the card to flip it &#8635;';
-    (on ? back.querySelector('a') : flip).focus({ preventScroll: true });
+  const scene = document.getElementById('scene');
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduce && window.matchMedia('(hover: hover)').matches) {
+    scene.addEventListener('mousemove', e => {
+      const r = scene.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
+      card.style.setProperty('--ry', (x * 10).toFixed(2) + 'deg');
+      card.style.setProperty('--rx', (-y * 10).toFixed(2) + 'deg');
+    });
+    scene.addEventListener('mouseleave', () => { card.style.setProperty('--ry', '0deg'); card.style.setProperty('--rx', '0deg'); });
   }
-  flip.addEventListener('click', () => setFlipped(true));
-  unflip.addEventListener('click', () => setFlipped(false));
+  const copy = document.getElementById('copy'), status = document.getElementById('status');
+  copy.addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText('bryantle2000@gmail.com'); copy.textContent = 'Copied!'; status.textContent = 'Email copied'; }
+    catch (e) { copy.textContent = 'bryantle2000@gmail.com'; }
+    setTimeout(() => { copy.textContent = 'Copy email'; }, 2000);
+  });
 </script>
 
 </body>
