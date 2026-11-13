@@ -60,7 +60,7 @@
     z-index: 0;
   }
   .grain { position: absolute; inset: 0; z-index: 0; pointer-events: none; opacity: 0.35; mix-blend-mode: multiply; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.3 0 0 0 0 0.28 0 0 0 0 0.24 0 0 0 0.9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); -webkit-mask-image: radial-gradient(circle closest-side at 50% 55%, #000 0%, transparent 100%); mask-image: radial-gradient(circle closest-side at 50% 55%, #000 0%, transparent 100%); }
-  .hero-inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+  .hero-inner { position: relative; z-index: 1; max-width: 960px; margin: 0 auto; }
   h1.name {
     font-family: 'Newsreader', serif;
     font-weight: 800;
@@ -190,13 +190,46 @@
   .nav-links { align-items: center; }
   .nav-cta { border: 1.5px solid var(--ink); border-radius: 999px; padding: 7px 16px; text-decoration: none !important; transition: background 0.2s ease, color 0.2s ease; }
   .nav-cta:hover, .nav-cta[aria-current] { background: var(--ink); color: var(--cream); }
-  @media (max-width: 520px) { .nav-links { gap: 18px; } .nav-cta { padding: 6px 12px; } }
+  @media (max-width: 520px) { nav { padding: 20px 5vw; } .nav-links { gap: 14px; font-size: 14px; } .nav-links a.nav-cta { padding: 7px 12px; } }
   html { scroll-behavior: smooth; }
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
   section[id] { scroll-margin-top: 90px; }
+
+
+  /* revamp: hero */
+  #hero { padding: 90px 6vw 130px; }
+  .eyebrow { font-size: 15px; color: var(--ink-soft); margin-bottom: 22px; letter-spacing: 0.01em; }
+  .eyebrow .say { opacity: 0.8; }
+  h1.headline { font-family: 'Newsreader', serif; font-weight: 700; font-size: clamp(44px, 7vw, 84px); line-height: 1.02; letter-spacing: -0.015em; max-width: 21ch; margin: 0 auto 26px; }
+  h1.headline em { font-style: italic; font-weight: 800; color: var(--accent); }
+  .lede { font-size: clamp(18px, 2.2vw, 21px); color: var(--ink-soft); max-width: 34em; margin: 0 auto 34px; }
+  .hero-ctas { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .cta.ghost { background: transparent; color: var(--ink); border: 1.5px solid var(--ink); }
+  .cta.ghost:hover { background: var(--ink); color: var(--cream); }
+  .hero-ctas .cta { margin: 0; border: 1.5px solid var(--ink); }
+  .sec-num { font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 8px; }
+  .tk-head { grid-row: span 3; }
+  .toolkit h3 { grid-row: auto; }
+  /* revamp: project image affordance */
+  a.banner, .bw-banner { position: relative; }
+  a.banner::after, .bw-banner::after { content: "View case study \2192"; position: absolute; right: 16px; bottom: 16px; background: var(--cream); color: var(--ink); font-weight: 600; font-size: 14px; padding: 8px 14px; border-radius: 999px; opacity: 0; transform: translateY(6px); transition: opacity 0.2s ease, transform 0.2s ease; z-index: 5; box-shadow: 0 4px 14px rgba(0,0,0,0.12); }
+  a.banner:hover::after, .bw-banner:hover::after, a.banner:focus-visible::after, .bw-banner:focus-visible::after { opacity: 1; transform: none; }
+  @media (hover: none) { a.banner::after, .bw-banner::after { opacity: 1; transform: none; } }
+  /* revamp: shared */
+  body { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.2 0 0 0 0 0.18 0 0 0 0 0.14 0 0 0 0.07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p)'/%3E%3C/svg%3E"); background-attachment: fixed; }
+  nav { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.2 0 0 0 0 0.18 0 0 0 0 0.14 0 0 0 0.07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p)'/%3E%3C/svg%3E"); background-attachment: fixed; }
+  .skip { position: absolute; left: 12px; top: -60px; background: var(--ink); color: var(--cream); padding: 10px 16px; border-radius: 8px; z-index: 100; text-decoration: none; font-weight: 600; transition: top 0.2s ease; }
+  .skip:focus { top: 12px; }
+  .nav-links a { padding: 10px 2px; }
+  .nav-links a.nav-cta { padding: 8px 16px; }
+  @view-transition { navigation: auto; }
+  ::view-transition-old(root), ::view-transition-new(root) { animation-duration: 0.28s; animation-timing-function: cubic-bezier(.16,1,.3,1); }
+  ::view-transition-group(*) { animation-duration: 0.42s; animation-timing-function: cubic-bezier(.16,1,.3,1); }
+  @media (prefers-reduced-motion: reduce) { ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; } }
 </style>
 </head>
 <body>
+<a class="skip" href="#work">Skip to content</a>
 
 <nav>
   <a class="logo" href="index.html" style="text-decoration:none">b.</a>
@@ -212,21 +245,17 @@
   <div class="glow"></div>
   <div class="grain"></div>
   <div class="hero-inner reveal stagger">
-    <h1 class="name serif">bryant le</h1>
-    <div class="pronounce">[BRY-ant LEY]</div>
-    <div class="rule"></div>
-    <div class="points">
-      <p><span class="num serif">1.</span> Designs from problems I see firsthand, like the paper menus I run food for</p>
-      <p><span class="num serif">2.</span> Informatics student at the University of Washington iSchool</p>
-    </div>
-    <div class="look-prompt">Two case studies below</div>
-    <div class="arrow-down">&#8595;</div>
+    <p class="eyebrow">Bryant Le <span class="say">[BRY-ant LEY]</span> &middot; Informatics, UW iSchool</p>
+    <h1 class="headline serif">I design from problems I see <em>firsthand.</em></h1>
+    <p class="lede">I've run food at Din Tai Fung since 2024. Watching menus, tickets, and language barriers trip people up taught me to design around real moments. Next, I'm adding data to back those calls.</p>
+    <div class="hero-ctas"><a class="cta" href="#work">See my work</a><a class="cta ghost" href="contact.html">Get in touch</a></div>
   </div>
 </section>
 
 <section id="work">
   <div class="work-head reveal">
-    <h2 class="serif">Featured Projects</h2>
+    <p class="sec-num">01 &middot; Work</p>
+    <h2 class="serif">Featured projects</h2>
     <div class="updated">Updated November 2026</div>
   </div>
 
@@ -323,7 +352,7 @@
       </div>
     </a>
     <div class="project-info">
-      <h3 class="p-title serif">The Ticket</h3>
+      <h3 class="p-title serif" style="view-transition-name: ticket-title">The Ticket</h3>
       <div class="tags">
         <span class="tag">UI/UX</span>
         <span class="tag">Unofficial concept</span>
@@ -338,7 +367,7 @@
       <img src="images/by-witness/reveal.webp" alt="By Witness reveal screen, the player's sketch stamped Wrong Face next to the real robber">
     </a>
     <div class="project-info">
-      <h3 class="p-title serif">By Witness</h3>
+      <h3 class="p-title serif" style="view-transition-name: bw-title">By Witness</h3>
       <div class="tags">
         <span class="tag">Game Design</span>
         <span class="tag">UI/UX</span>
@@ -351,11 +380,10 @@
 
 <section id="about">
   <div class="about-grid reveal stagger">
-    <h2 class="serif">About</h2>
+    <div><p class="sec-num">02 &middot; About</p><h2 class="serif">About</h2></div>
     <div class="about-body">
-      <p>I'm a first generation college student studying Informatics at the UW iSchool. I've worked in food service since 2022, and I still run food at Din Tai Fung.</p>
-      <p>That's where I learned to notice what slows people down. A confusing menu. A misread ticket. A guest who can't read the language. Now I design around those moments. I start with what I see firsthand and sketch fast in Figma.</p>
-      <p>Next, I'm learning Python so I can back my design calls with data.</p>
+      <p>I'm a first generation college student studying Informatics at the UW iSchool. I've worked in food service since 2022, from a concession stand to a cafe to Din Tai Fung. That work taught me to read a room fast and spot what slows people down.</p>
+      <p>Right now I'm learning Python and building my first data project, so my design calls come with numbers behind them.</p>
     </div>
     <dl class="about-facts">
       <div><dt>Based in</dt><dd>Seattle, WA</dd></div>
@@ -365,7 +393,7 @@
   </div>
 
   <div class="toolkit reveal stagger">
-    <h3 class="serif">Toolkit</h3>
+    <div class="tk-head"><p class="sec-num">03 &middot; Toolkit</p><h3 class="serif">Toolkit</h3></div>
     <div class="tk-row"><span class="tk-label">Design</span><span class="tk-items">Figma, prototyping, user flows, user research, information architecture</span></div>
     <div class="tk-row"><span class="tk-label">Data and code</span><span class="tk-items">Excel, R, Java, HTML and CSS, Python (learning)</span></div>
     <div class="tk-row"><span class="tk-label">Everyday</span><span class="tk-items">GitHub Pages, Canva, Mailchimp, Google Slides, PowerPoint</span></div>
