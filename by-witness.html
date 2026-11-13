@@ -89,6 +89,10 @@
   a.banner:active, .bw-banner:active { transform: scale(0.99); }
   .facts dd, .row { font-variant-numeric: tabular-nums; }
   img { background: #F1ECE3; }
+  .nav-links { align-items: center; }
+  .nav-cta { border: 1.5px solid var(--ink); border-radius: 999px; padding: 7px 16px; text-decoration: none !important; transition: background 0.2s ease, color 0.2s ease; }
+  .nav-cta:hover, .nav-cta[aria-current] { background: var(--ink); color: var(--cream); }
+  @media (max-width: 520px) { .nav-links { gap: 18px; } .nav-cta { padding: 6px 12px; } }
 </style>
 </head>
 <body>
@@ -97,8 +101,9 @@
   <a class="logo" href="index.html">b.</a>
   <div class="nav-links">
     <a href="index.html#work">work</a>
+    <a href="index.html#about">about</a>
     <a href="resume.html">resume</a>
-    <a href="contact.html">contact me</a>
+    <a class="nav-cta" href="contact.html">contact me</a>
   </div>
 </nav>
 
@@ -114,7 +119,7 @@
   </div>
 
   <figure class="logo-fig">
-    <img src="images/by-witness/logo.png" alt="By Witness logo, hand drawn lettering with a bullet and a wanted poster">
+    <img src="images/by-witness/logo.webp" alt="By Witness logo, hand drawn lettering with a bullet and a wanted poster">
   </figure>
 
   <dl class="facts">
@@ -196,31 +201,31 @@
     <div class="screen">
       <h4><span class="num">1.</span> Interview</h4>
       <p>Clara says the robber was tall and wore a hat. You can ask an open question or a leading one. You ask if he had a scar. Now she remembers big scars across his face.</p>
-      <img loading="lazy" decoding="async" src="images/by-witness/interview.png" alt="Interview screen. Clara answers and the player picks between an open question and a leading question.">
+      <img loading="lazy" decoding="async" src="images/by-witness/interview.webp" alt="Interview screen. Clara answers and the player picks between an open question and a leading question.">
     </div>
 
     <div class="screen">
       <h4><span class="num">2.</span> The deal</h4>
       <p>Clara offers a sharp description if you leave her brother Eli out of it. Take the deal and you catch the robber fast, but Eli robs again two weeks later. Refuse and Clara goes vague, but the town learns you can't be bought. No right answer. Either way, town trust moves.</p>
-      <img loading="lazy" decoding="async" src="images/by-witness/the-deal.png" alt="The Deal screen. Clara offers a description in exchange for protecting her brother, with Take the deal and Refuse buttons.">
+      <img loading="lazy" decoding="async" src="images/by-witness/the-deal.webp" alt="The Deal screen. Clara offers a description in exchange for protecting her brother, with Take the deal and Refuse buttons.">
     </div>
 
     <div class="screen">
       <h4><span class="num">3.</span> Compare notes</h4>
       <p>Your notebook puts Clara next to Otis, the bartender. They agree he was tall and wore a wide hat. But Otis says there wasn't a scratch on him. The notebook flags the conflict and asks the real question. Did your leading question plant that scar?</p>
-      <img loading="lazy" decoding="async" src="images/by-witness/compare-notes.png" alt="Compare Notes screen. Clara's and Otis's notes side by side with the conflicting scar detail circled.">
+      <img loading="lazy" decoding="async" src="images/by-witness/compare-notes.webp" alt="Compare Notes screen. Clara's and Otis's notes side by side with the conflicting scar detail circled.">
     </div>
 
     <div class="screen">
       <h4><span class="num">4.</span> Sketch the suspect</h4>
       <p>You build the face from parts. The witness panel shows what each person said and flags the scar because you asked about it. You're at 2 of 3 posters for the week. The quota pushes you to post anyway.</p>
-      <img loading="lazy" decoding="async" src="images/by-witness/sketch.png" alt="Sketch the Suspect screen. A wanted poster built from face parts, with a witness panel and a quota counter.">
+      <img loading="lazy" decoding="async" src="images/by-witness/sketch.webp" alt="Sketch the Suspect screen. A wanted poster built from face parts, with a witness panel and a quota counter.">
     </div>
 
     <div class="screen">
       <h4><span class="num">5.</span> The reveal</h4>
       <p>At the end of the week, your sketch sits next to the real robber. Wrong face. A mob grabbed Silas, a drifter who matched your poster. The real robber is still out there, and town trust drops.</p>
-      <img loading="lazy" decoding="async" src="images/by-witness/reveal.png" alt="The Reveal screen. The player's sketch stamped Wrong Face next to the real robber, with town trust going down.">
+      <img loading="lazy" decoding="async" src="images/by-witness/reveal.webp" alt="The Reveal screen. The player's sketch stamped Wrong Face next to the real robber, with town trust going down.">
     </div>
 
     <p>That chain is the whole game in miniature. One leading question became a fake scar, then a wrong poster, then an innocent man hurt. I wanted players to trace it back and feel it.</p>

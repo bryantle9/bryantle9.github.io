@@ -33,6 +33,10 @@
   .btn:active, .download:active, .p-link:active, .cta:active { transform: scale(0.97); }
   a.banner:active, .bw-banner:active { transform: scale(0.99); }
   .facts dd, .row { font-variant-numeric: tabular-nums; }
+  .nav-links { align-items: center; }
+  .nav-cta { border: 1.5px solid var(--ink); border-radius: 999px; padding: 7px 16px; text-decoration: none !important; transition: background 0.2s ease, color 0.2s ease; }
+  .nav-cta:hover, .nav-cta[aria-current] { background: var(--ink); color: var(--cream); }
+  @media (max-width: 520px) { .nav-links { gap: 18px; } .nav-cta { padding: 6px 12px; } }
 </style>
 </head>
 <body>
@@ -41,8 +45,9 @@
   <a class="logo" href="index.html">b.</a>
   <div class="nav-links">
     <a href="index.html#work">work</a>
+    <a href="index.html#about">about</a>
     <a href="resume.html" aria-current="page">resume</a>
-    <a href="contact.html">contact me</a>
+    <a class="nav-cta" href="contact.html">contact me</a>
   </div>
 </nav>
 
@@ -52,7 +57,7 @@
     <a class="download" href="resume.pdf" download="Bryant_Le_Resume.pdf">Download PDF</a>
   </div>
   <div class="paper">
-    <img src="images/resume.png" alt="Bryant Le's resume. Download the PDF for a text version.">
+    <img src="images/resume.webp" alt="Bryant Le's resume. Download the PDF for a text version.">
   </div>
 </main>
 
