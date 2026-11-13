@@ -117,11 +117,60 @@
   ::view-transition-group(*) { animation-duration: 0.42s; animation-timing-function: cubic-bezier(.16,1,.3,1); }
   @media (prefers-reduced-motion: reduce) { ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; } }
   main p, main li { max-width: 68ch; }
-  h1 { view-transition-name: bw-title; }
+  h1.cs-title { view-transition-name: bw-title; }
   .logo { font-family: 'Newsreader', serif; font-weight: 700; font-size: 25px; text-decoration: none; white-space: nowrap; letter-spacing: -0.005em; }
   .logo .yr { font-family: 'Work Sans', sans-serif; font-weight: 500; font-size: 12px; letter-spacing: 0.08em; color: var(--ink-soft); margin-left: 8px; vertical-align: 3px; }
   @media (max-width: 520px) { .logo { font-size: 19px; } .logo .yr { display: none; } }
   @media (max-width: 400px) { .nav-links a[href$="#about"] { display: none; } }
+
+  /* case study v2 */
+  main#main { max-width: 1240px; padding: 24px 6vw 60px; margin: 0 auto; }
+  main#main p, main#main li { max-width: none; }
+  .cs-hero { padding: 30px 0 40px; }
+  .cs-back { display: inline-block; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; color: var(--ink-soft); text-decoration: none; margin-bottom: 48px; }
+  .cs-back:hover { color: var(--ink); }
+  h1.cs-title { font-family: 'Newsreader', serif; font-weight: 700; font-size: clamp(56px, 10vw, 148px); line-height: 0.95; letter-spacing: -0.025em; margin-bottom: 28px; }
+  .cs-one { font-family: 'Newsreader', serif; font-weight: 500; font-size: clamp(22px, 2.6vw, 34px); line-height: 1.25; max-width: 24ch; margin-bottom: 26px; }
+  .cs-facts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 22px 0; margin: 40px 0 48px; }
+  .cs-facts dt { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); font-weight: 600; margin-bottom: 6px; }
+  .cs-facts dd { font-size: 16px; }
+  .cs-facts .sub { display: block; font-size: 13px; color: var(--ink-soft); }
+  .cs-cover { border-radius: 22px; overflow: hidden; background: #F1EBE0; padding: clamp(16px, 3vw, 40px); margin-bottom: 30px; }
+  .cs-cover img { display: block; width: 100%; height: auto; border-radius: 10px; }
+  .cs-sec { display: grid; grid-template-columns: 1fr 2fr; gap: 24px 70px; padding: 90px 0; border-top: 1px solid var(--line); }
+  .cs-sec > header { align-self: start; position: sticky; top: 110px; }
+  .cs-num { font-size: 13px; letter-spacing: 0.1em; color: var(--ink-soft); margin-bottom: 10px; }
+  .cs-sec h2 { font-family: 'Newsreader', serif; font-weight: 700; font-size: clamp(36px, 4.6vw, 60px); line-height: 1.02; letter-spacing: -0.015em; }
+  .cs-body > p { font-size: 18px; line-height: 1.6; margin-bottom: 18px; max-width: 62ch; }
+  .cs-lead { font-family: 'Newsreader', serif; font-size: clamp(22px, 2.3vw, 28px) !important; line-height: 1.35 !important; font-weight: 500; }
+  .cs-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 18px; margin: 10px 0 18px; }
+  .cs-card { background: #F1EBE0; border-radius: 20px; padding: 26px 26px 28px; }
+  .cs-card .k { font-size: 13px; color: var(--ink-soft); letter-spacing: 0.08em; margin-bottom: 18px; display: block; }
+  .cs-card h3 { font-family: 'Newsreader', serif; font-weight: 700; font-size: 24px; line-height: 1.15; margin-bottom: 10px; }
+  .cs-card p { font-size: 16px; line-height: 1.55; color: #3A3832; }
+  .cs-label { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); font-weight: 600; margin: 34px 0 6px; }
+  .cs-map { width: 100%; border-collapse: collapse; margin-top: 6px; }
+  .cs-map td { padding: 18px 0; border-bottom: 1px solid var(--line); font-size: 17px; vertical-align: top; }
+  .cs-map td.arrow { width: 56px; text-align: center; color: var(--ink-soft); }
+  .cs-map tr:first-child td { border-top: 1px solid var(--line); }
+  .cs-flow { background: #F1EBE0; border-radius: 22px; padding: clamp(16px, 2.5vw, 34px); display: grid; gap: clamp(10px, 1.6vw, 22px); margin-top: 10px; }
+  .cs-flow img { display: block; width: 100%; height: auto; border-radius: 10px; }
+  .cs-cap { font-size: 16px; color: var(--ink-soft); margin: 14px 0 40px; }
+  .cs-cap b { color: var(--ink); font-weight: 600; }
+  .cs-two { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .cs-card ul { margin: 0 0 0 18px; } .cs-card li { font-size: 16px; margin-bottom: 8px; color: #3A3832; }
+  .cs-next { display: block; text-decoration: none; padding: 80px 0 40px; border-top: 1px solid var(--line); }
+  .cs-next .cs-label { margin-top: 0; }
+  .cs-next .t { font-family: 'Newsreader', serif; font-weight: 700; font-size: clamp(56px, 9vw, 130px); line-height: 1; letter-spacing: -0.025em; display: inline-flex; gap: 0.3em; align-items: baseline; }
+  .cs-next .t span { transition: transform 0.25s cubic-bezier(.16,1,.3,1); display: inline-block; }
+  .cs-next:hover .t span { transform: translateX(12px); }
+  .cs-note { border-left: 3px solid var(--accent); padding: 4px 0 4px 18px; color: var(--ink-soft); font-size: 15px; max-width: 70ch; margin-top: 6px; }
+  .loop { margin-top: 6px; }
+  .cs-shots { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 22px; }
+  .cs-shots figure:last-child { grid-column: 1 / -1; max-width: calc(50% - 11px); }
+  .cs-shots .cs-cap { margin: 12px 0 28px; font-size: 15px; }
+  @media (max-width: 860px) { .cs-shots { grid-template-columns: 1fr; } .cs-shots figure:last-child { max-width: none; } }
+  @media (max-width: 860px) { .cs-sec { grid-template-columns: 1fr; padding: 64px 0; } .cs-sec > header { position: static; } .cs-facts { grid-template-columns: 1fr 1fr; } .cs-two { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -138,148 +187,93 @@
 </nav>
 
 <main id="main">
-  <a class="back" href="index.html#work">&larr; Back to projects</a>
-
-  <h1>By Witness</h1>
-  <p class="lede">A story driven game where you play a sketch artist in a corrupt Old West town. You interview witnesses, draw wanted posters, and live with what happens when you get the face wrong.</p>
-  <div class="tags">
-    <span class="tag">Game Design</span>
-    <span class="tag">UI/UX</span>
-    <span class="tag">In progress</span>
-  </div>
-
-  <figure class="logo-fig">
-    <img src="images/by-witness/logo.webp" alt="By Witness logo, hand drawn lettering with a bullet and a wanted poster" width="1600" height="900">
-  </figure>
-
-  <dl class="facts">
-    <div><dt>Class</dt><dd>INFO 498, University of Washington</dd></div>
-    <div><dt>Timeline</dt><dd>Oct 2026 to present<span class="sub">Wraps up end of fall quarter</span></dd></div>
-    <div><dt>Team</dt><dd>Bryant Le, Matthew Nguyen, Kristy Le</dd></div>
-    <div><dt>My role</dt><dd>Team lead, game designer, all five mechanic screens in Figma</dd></div>
-  </dl>
-
-  <section>
-    <h2>The idea</h2>
-    <p>Most games about crime put you in charge. You catch the bad guy and the story ends. We wanted to flip that. In By Witness, the truth depends on what scared, paid off, or confused people tell you. And the system around you rewards speed over getting it right.</p>
-    <p>One wrong question can put an innocent man on a poster. A mob acts on it. The real robber walks.</p>
-    <p>Our goal was simple. We wanted players to leave asking who actually decides what justice looks like, and what it costs to do the right thing when the easy thing pays off right now.</p>
+  <section class="cs-hero">
+    <a class="cs-back" href="index.html#work">&larr; All work</a>
+    <h1 class="cs-title">By Witness</h1>
+    <p class="cs-one">A story driven game where you play a sketch artist in a corrupt Old West town, and one wrong question can put an innocent man on a poster.</p>
+    <div class="tags"><span class="tag">Game Design</span><span class="tag">UI/UX</span><span class="tag">In progress</span></div>
+    <dl class="cs-facts">
+      <div><dt>Year</dt><dd>Oct 2026 to present<span class="sub">Wraps up end of fall quarter</span></dd></div>
+      <div><dt>Role</dt><dd>Team lead, game designer</dd></div>
+      <div><dt>Team</dt><dd>Bryant Le, Matthew Nguyen, Kristy Le</dd></div>
+      <div><dt>Tools</dt><dd>Figma<span class="sub">INFO 498, UW</span></dd></div>
+    </dl>
+    <div class="cs-cover"><img class="" loading="lazy" decoding="async" src="images/by-witness/reveal.webp" width="1600" height="900" alt="The Reveal screen. The player's sketch stamped Wrong Face next to the real robber, with town trust going down."></div>
   </section>
 
-  <section>
-    <h2>Who it's for</h2>
-    <p>We designed for two kinds of players.</p>
-    <table>
-      <thead><tr><th>Player type</th><th>What they want</th><th>How the game gives it to them</th></tr></thead>
-      <tbody>
-        <tr><td>Explorers</td><td>To see every possible outcome</td><td>Multiple endings based on your choices, plus story clues about the last sheriff</td></tr>
-        <tr><td>Achievers</td><td>To beat the game and feel good about it</td><td>Cases that get harder each week, a case record board, and a reveal after every poster</td></tr>
-      </tbody>
-    </table>
-    <p>Both groups get the same message. Explorers find it by trying different paths. Achievers find it by trying to get every case right and realizing the system makes that hard.</p>
+  <section class="cs-sec">
+    <header><p class="cs-num">(01)</p><h2>Overview</h2></header>
+    <div class="cs-body">
+      <p class="cs-lead">Most games about crime put you in charge. You catch the bad guy and the story ends. We wanted to flip that.</p>
+      <p>In By Witness, the truth depends on what scared, paid off, or confused people tell you. And the system around you rewards speed over getting it right. We wanted players to leave asking who actually decides what justice looks like, and what it costs to do the right thing when the easy thing pays off right now.</p>
+    </div>
   </section>
 
-  <section>
-    <h2>Core loop</h2>
-    <p>The game runs on a daily loop inside a weekly loop.</p>
-    <div class="loop" role="img" aria-label="Core loop. Every day you interview witnesses, take or refuse deals, and sketch the poster. Every week you lock in a suspect, see the reveal, and face harder cases.">
-      <div class="loop-row">
-        <div class="loop-label">Every day</div>
-        <div class="steps">
-          <div class="step"><strong>Interview witnesses</strong><span>Open or leading questions</span></div>
-          <div class="arrow">&rarr;</div>
-          <div class="step"><strong>Take or refuse deals</strong><span>Bribes and moral choices</span></div>
-          <div class="arrow">&rarr;</div>
-          <div class="step"><strong>Sketch the poster</strong><span>Build the face from parts</span></div>
-        </div>
+  <section class="cs-sec">
+    <header><p class="cs-num">(02)</p><h2>Who it's for</h2></header>
+    <div class="cs-body">
+      <div class="cs-cards">
+        <div class="cs-card"><span class="k">Explorers</span><h3>See every outcome</h3><p>Multiple endings based on your choices, plus story clues about what really happened to the last sheriff.</p></div>
+        <div class="cs-card"><span class="k">Achievers</span><h3>Beat the game</h3><p>Cases that get harder each week, a case record board, and a reveal after every poster.</p></div>
       </div>
-      <div class="between">&darr; end of week</div>
-      <div class="loop-row">
-        <div class="loop-label">Every week</div>
-        <div class="steps">
-          <div class="step"><strong>Lock in your suspect</strong><span>Compare notes, pick one</span></div>
-          <div class="arrow">&rarr;</div>
-          <div class="step key"><strong>The reveal</strong><span>See who got hurt and why</span></div>
-          <div class="arrow">&rarr;</div>
-          <div class="step"><strong>Harder cases</strong><span>More pressure next week</span></div>
-        </div>
+      <p>Both get the same message. Explorers find it by trying different paths. Achievers find it by trying to get every case right and realizing the system makes that hard.</p>
+    </div>
+  </section>
+
+  <section class="cs-sec">
+    <header><p class="cs-num">(03)</p><h2>Core loop</h2></header>
+    <div class="cs-body">
+      <div class="loop" role="img" aria-label="Core loop. Every day you interview witnesses, take or refuse deals, and sketch the poster. Every week you lock in a suspect, see the reveal, and face harder cases.">
+        <div class="loop-row"><div class="loop-label">Every day</div><div class="steps">
+          <div class="step"><strong>Interview witnesses</strong><span>Open or leading questions</span></div><div class="arrow">&rarr;</div>
+          <div class="step"><strong>Take or refuse deals</strong><span>Bribes and moral choices</span></div><div class="arrow">&rarr;</div>
+          <div class="step"><strong>Sketch the poster</strong><span>Build the face from parts</span></div></div></div>
+        <div class="between">&darr; end of week</div>
+        <div class="loop-row"><div class="loop-label">Every week</div><div class="steps">
+          <div class="step"><strong>Lock in your suspect</strong><span>Compare notes, pick one</span></div><div class="arrow">&rarr;</div>
+          <div class="step key"><strong>The reveal</strong><span>See who got hurt and why</span></div><div class="arrow">&rarr;</div>
+          <div class="step"><strong>Harder cases</strong><span>More pressure next week</span></div></div></div>
       </div>
     </div>
-    <p>Every day you interview, make choices, and sketch. At the end of the week, all those small choices land at once in the reveal.</p>
   </section>
 
-  <section>
-    <h2>Three design decisions</h2>
-
-    <h3><span class="num">1.</span> Good questions vs fast questions</h3>
-    <p>In interviews, you pick from a list of questions. Open questions like "What did he look like?" get honest but vague answers. Leading questions like "Did he have a scar?" get clearer answers, but they can plant a false detail in the witness's head.</p>
-    <p>I wanted the fastest option to also be the riskiest one. Real eyewitness memory works this way, and it turns every question into a small choice instead of a menu click. I labeled each question type right on the button and marked leading questions in red so players always see the tradeoff.</p>
-
-    <h3><span class="num">2.</span> Bribes vs moral decisions</h3>
-    <p>We split choices into two kinds. Bribes are clearly wrong. Someone offers a shortcut to make you look away. Moral decisions have no right answer. Someone with understandable reasons asks you to bend the rules.</p>
-    <p>We needed both. If every choice were a bribe, players would refuse everything and feel good about it. Moral decisions make them stop and think. We also made sure refusing a bribe costs something, like a harder interview or a missed quota. Doing the right thing should feel like a real choice, not a free win.</p>
-
-    <h3><span class="num">3.</span> A quota that rewards speed over truth</h3>
-    <p>You have to post a set number of posters each week. One in week one, two in week two, three after that. Miss it three times and you get fired.</p>
-    <p>The key detail is that the quota counts posters, not correct posters. Nobody checks if you drew the right face. The system pushes you to rush, just like real arrest and ticket quotas have. That pressure is what makes bribes tempting.</p>
+  <section class="cs-sec">
+    <header><p class="cs-num">(04)</p><h2>Design decisions</h2></header>
+    <div class="cs-body">
+      <div class="cs-cards">
+        <div class="cs-card"><span class="k">01</span><h3>Good questions vs fast questions</h3><p>Open questions get honest but vague answers. Leading questions get clear answers but can plant false details. The fastest option is also the riskiest.</p></div>
+        <div class="cs-card"><span class="k">02</span><h3>Bribes vs moral decisions</h3><p>Bribes are clearly wrong. Moral decisions have no right answer. If every choice were a bribe, players would refuse everything and feel good about it.</p></div>
+        <div class="cs-card"><span class="k">03</span><h3>A quota that rewards speed</h3><p>The quota counts posters, not correct posters. Nobody checks if you drew the right face. That pressure is what makes bribes tempting.</p></div>
+      </div>
+    </div>
   </section>
 
-  <section>
-    <h2>One case, five screens</h2>
-    <p>I designed five screens to show how one choice ripples through the whole game. Here's a single case, following Clara, a witness to a stagecoach robbery.</p>
-
-    <div class="screen">
-      <h4><span class="num">1.</span> Interview</h4>
-      <p>Clara says the robber was tall and wore a hat. You can ask an open question or a leading one. You ask if he had a scar. Now she remembers big scars across his face.</p>
-      <img loading="lazy" decoding="async" src="images/by-witness/interview.webp" alt="Interview screen. Clara answers and the player picks between an open question and a leading question." width="1600" height="900">
+  <section class="cs-sec">
+    <header><p class="cs-num">(05)</p><h2>One case, five screens</h2></header>
+    <div class="cs-body">
+      <p>Following Clara, a witness to a stagecoach robbery, through the whole game loop.</p>
+      <div class="cs-shots">
+        <figure><div class="cs-flow"><img class="" loading="lazy" decoding="async" src="images/by-witness/interview.webp" width="1600" height="900" alt="Interview screen. Clara answers and the player picks between an open question and a leading question."></div><figcaption class="cs-cap"><b>1. Interview.</b> You ask if he had a scar. Now Clara remembers big scars across his face.</figcaption></figure>
+        <figure><div class="cs-flow"><img class="" loading="lazy" decoding="async" src="images/by-witness/the-deal.webp" width="1600" height="900" alt="The Deal screen with Take the deal and Refuse buttons."></div><figcaption class="cs-cap"><b>2. The deal.</b> Clara offers a sharp description if you leave her brother out of it. No right answer, but town trust moves either way.</figcaption></figure>
+        <figure><div class="cs-flow"><img class="" loading="lazy" decoding="async" src="images/by-witness/compare-notes.webp" width="1600" height="892" alt="Compare Notes screen with Clara's and Otis's notes and the conflicting scar circled."></div><figcaption class="cs-cap"><b>3. Compare notes.</b> Otis says there wasn't a scratch on him. Did your leading question plant that scar?</figcaption></figure>
+        <figure><div class="cs-flow"><img class="" loading="lazy" decoding="async" src="images/by-witness/sketch.webp" width="1600" height="888" alt="Sketch the Suspect screen with a wanted poster, witness panel, and quota counter."></div><figcaption class="cs-cap"><b>4. Sketch the suspect.</b> The witness panel flags the scar because you asked about it. The quota pushes you to post anyway.</figcaption></figure>
+        <figure><div class="cs-flow"><img class="" loading="lazy" decoding="async" src="images/by-witness/reveal.webp" width="1600" height="900" alt="The Reveal screen with the player's sketch stamped Wrong Face."></div><figcaption class="cs-cap"><b>5. The reveal.</b> Wrong face. A mob grabbed Silas, a drifter who matched your poster. The real robber is still out there.</figcaption></figure>
+      </div>
     </div>
-
-    <div class="screen">
-      <h4><span class="num">2.</span> The deal</h4>
-      <p>Clara offers a sharp description if you leave her brother Eli out of it. Take the deal and you catch the robber fast, but Eli robs again two weeks later. Refuse and Clara goes vague, but the town learns you can't be bought. No right answer. Either way, town trust moves.</p>
-      <img loading="lazy" decoding="async" src="images/by-witness/the-deal.webp" alt="The Deal screen. Clara offers a description in exchange for protecting her brother, with Take the deal and Refuse buttons." width="1600" height="900">
-    </div>
-
-    <div class="screen">
-      <h4><span class="num">3.</span> Compare notes</h4>
-      <p>Your notebook puts Clara next to Otis, the bartender. They agree he was tall and wore a wide hat. But Otis says there wasn't a scratch on him. The notebook flags the conflict and asks the real question. Did your leading question plant that scar?</p>
-      <img loading="lazy" decoding="async" src="images/by-witness/compare-notes.webp" alt="Compare Notes screen. Clara's and Otis's notes side by side with the conflicting scar detail circled." width="1600" height="892">
-    </div>
-
-    <div class="screen">
-      <h4><span class="num">4.</span> Sketch the suspect</h4>
-      <p>You build the face from parts. The witness panel shows what each person said and flags the scar because you asked about it. You're at 2 of 3 posters for the week. The quota pushes you to post anyway.</p>
-      <img loading="lazy" decoding="async" src="images/by-witness/sketch.webp" alt="Sketch the Suspect screen. A wanted poster built from face parts, with a witness panel and a quota counter." width="1600" height="888">
-    </div>
-
-    <div class="screen">
-      <h4><span class="num">5.</span> The reveal</h4>
-      <p>At the end of the week, your sketch sits next to the real robber. Wrong face. A mob grabbed Silas, a drifter who matched your poster. The real robber is still out there, and town trust drops.</p>
-      <img loading="lazy" decoding="async" src="images/by-witness/reveal.webp" alt="The Reveal screen. The player's sketch stamped Wrong Face next to the real robber, with town trust going down." width="1600" height="900">
-    </div>
-
-    <p>That chain is the whole game in miniature. One leading question became a fake scar, then a wrong poster, then an innocent man hurt. I wanted players to trace it back and feel it.</p>
   </section>
 
-  <section>
-    <h2>How it changed</h2>
-    <ul>
-      <li>We started with "Likeness," a sketch artist drawing wanted posters. It was a fun mechanic with no message.</li>
-      <li>We added a social impact angle. The town is corrupt, and the system rewards speed over truth.</li>
-      <li>We renamed it By Witness to put the focus on witnesses and how unreliable memory is.</li>
-    </ul>
-    <p class="note">Playtesting is next. I'm walking classmates through these screens to see where they get stuck, and I'll update this page with what I changed.</p>
+  <section class="cs-sec">
+    <header><p class="cs-num">(06)</p><h2>How it changed</h2></header>
+    <div class="cs-body">
+      <div class="cs-two">
+        <div class="cs-card"><h3>Iterations</h3><ul><li>Started as "Likeness," a sketch artist drawing wanted posters. A fun mechanic with no message.</li><li>Added a social impact angle: a corrupt town and a system that rewards speed over truth.</li><li>Renamed it By Witness to focus on witnesses and unreliable memory.</li></ul></div>
+        <div class="cs-card"><h3>What I learned</h3><ul><li>Consequences teach better than rules.</li><li>A choice needs a cost on both sides.</li><li>The system is the message.</li><li>Leading a team means making calls.</li></ul></div>
+      </div>
+      <p class="cs-note">Playtesting is next. I'm walking classmates through these screens and will update this page with what I changed.</p>
+    </div>
   </section>
 
-  <section>
-    <h2>What I learned</h2>
-    <ul>
-      <li><strong>Consequences teach better than rules.</strong> Telling players leading questions are bad does nothing. Showing them an innocent man on a poster because of their question sticks.</li>
-      <li><strong>A choice needs a cost on both sides.</strong> If refusing a bribe were free, it wouldn't be a choice.</li>
-      <li><strong>The system is the message.</strong> The quota says more about justice than any line of dialogue could.</li>
-      <li><strong>Leading a team means making calls.</strong> I kept us focused on one core mechanic and built everything else around it.</li>
-    </ul>
-  </section>
+  <a class="cs-next" href="the-ticket.html"><p class="cs-label">Next project</p><span class="t" style="view-transition-name: ticket-title">The Ticket <span>&rarr;</span></span></a>
 </main>
 
 <footer id="footer">

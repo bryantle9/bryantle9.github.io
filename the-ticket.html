@@ -95,11 +95,56 @@
   ::view-transition-group(*) { animation-duration: 0.42s; animation-timing-function: cubic-bezier(.16,1,.3,1); }
   @media (prefers-reduced-motion: reduce) { ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; } }
   main p, main li { max-width: 68ch; }
-  h1 { view-transition-name: ticket-title; }
+  h1.cs-title { view-transition-name: ticket-title; }
   .logo { font-family: 'Newsreader', serif; font-weight: 700; font-size: 25px; text-decoration: none; white-space: nowrap; letter-spacing: -0.005em; }
   .logo .yr { font-family: 'Work Sans', sans-serif; font-weight: 500; font-size: 12px; letter-spacing: 0.08em; color: var(--ink-soft); margin-left: 8px; vertical-align: 3px; }
   @media (max-width: 520px) { .logo { font-size: 19px; } .logo .yr { display: none; } }
   @media (max-width: 400px) { .nav-links a[href$="#about"] { display: none; } }
+
+  /* case study v2 */
+  main#main { max-width: 1240px; padding: 24px 6vw 60px; margin: 0 auto; }
+  main#main p, main#main li { max-width: none; }
+  .cs-hero { padding: 30px 0 40px; }
+  .cs-back { display: inline-block; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; color: var(--ink-soft); text-decoration: none; margin-bottom: 48px; }
+  .cs-back:hover { color: var(--ink); }
+  h1.cs-title { font-family: 'Newsreader', serif; font-weight: 700; font-size: clamp(56px, 10vw, 148px); line-height: 0.95; letter-spacing: -0.025em; margin-bottom: 28px; }
+  .cs-one { font-family: 'Newsreader', serif; font-weight: 500; font-size: clamp(22px, 2.6vw, 34px); line-height: 1.25; max-width: 24ch; margin-bottom: 26px; }
+  .cs-facts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 22px 0; margin: 40px 0 48px; }
+  .cs-facts dt { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); font-weight: 600; margin-bottom: 6px; }
+  .cs-facts dd { font-size: 16px; }
+  .cs-facts .sub { display: block; font-size: 13px; color: var(--ink-soft); }
+  .cs-cover { border-radius: 22px; overflow: hidden; background: #F1EBE0; padding: clamp(16px, 3vw, 40px); margin-bottom: 30px; }
+  .cs-cover img { display: block; width: 100%; height: auto; border-radius: 10px; }
+  .cs-sec { display: grid; grid-template-columns: 1fr 2fr; gap: 24px 70px; padding: 90px 0; border-top: 1px solid var(--line); }
+  .cs-sec > header { align-self: start; position: sticky; top: 110px; }
+  .cs-num { font-size: 13px; letter-spacing: 0.1em; color: var(--ink-soft); margin-bottom: 10px; }
+  .cs-sec h2 { font-family: 'Newsreader', serif; font-weight: 700; font-size: clamp(36px, 4.6vw, 60px); line-height: 1.02; letter-spacing: -0.015em; }
+  .cs-body > p { font-size: 18px; line-height: 1.6; margin-bottom: 18px; max-width: 62ch; }
+  .cs-lead { font-family: 'Newsreader', serif; font-size: clamp(22px, 2.3vw, 28px) !important; line-height: 1.35 !important; font-weight: 500; }
+  .cs-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 18px; margin: 10px 0 18px; }
+  .cs-card { background: #F1EBE0; border-radius: 20px; padding: 26px 26px 28px; }
+  .cs-card .k { font-size: 13px; color: var(--ink-soft); letter-spacing: 0.08em; margin-bottom: 18px; display: block; }
+  .cs-card h3 { font-family: 'Newsreader', serif; font-weight: 700; font-size: 24px; line-height: 1.15; margin-bottom: 10px; }
+  .cs-card p { font-size: 16px; line-height: 1.55; color: #3A3832; }
+  .cs-label { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); font-weight: 600; margin: 34px 0 6px; }
+  .cs-map { width: 100%; border-collapse: collapse; margin-top: 6px; }
+  .cs-map td { padding: 18px 0; border-bottom: 1px solid var(--line); font-size: 17px; vertical-align: top; }
+  .cs-map td.arrow { width: 56px; text-align: center; color: var(--ink-soft); }
+  .cs-map tr:first-child td { border-top: 1px solid var(--line); }
+  .cs-flow { background: #F1EBE0; border-radius: 22px; padding: clamp(16px, 2.5vw, 34px); display: grid; gap: clamp(10px, 1.6vw, 22px); margin-top: 10px; }
+  .cs-flow img { display: block; width: 100%; height: auto; border-radius: 10px; }
+  .cs-cap { font-size: 16px; color: var(--ink-soft); margin: 14px 0 40px; }
+  .cs-cap b { color: var(--ink); font-weight: 600; }
+  .cs-two { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .cs-card ul { margin: 0 0 0 18px; } .cs-card li { font-size: 16px; margin-bottom: 8px; color: #3A3832; }
+  .cs-next { display: block; text-decoration: none; padding: 80px 0 40px; border-top: 1px solid var(--line); }
+  .cs-next .cs-label { margin-top: 0; }
+  .cs-next .t { font-family: 'Newsreader', serif; font-weight: 700; font-size: clamp(56px, 9vw, 130px); line-height: 1; letter-spacing: -0.025em; display: inline-flex; gap: 0.3em; align-items: baseline; }
+  .cs-next .t span { transition: transform 0.25s cubic-bezier(.16,1,.3,1); display: inline-block; }
+  .cs-next:hover .t span { transform: translateX(12px); }
+  .cs-note { border-left: 3px solid var(--accent); padding: 4px 0 4px 18px; color: var(--ink-soft); font-size: 15px; max-width: 70ch; margin-top: 6px; }
+  .loop { margin-top: 6px; }
+  @media (max-width: 860px) { .cs-sec { grid-template-columns: 1fr; padding: 64px 0; } .cs-sec > header { position: static; } .cs-facts { grid-template-columns: 1fr 1fr; } .cs-two { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -116,107 +161,89 @@
 </nav>
 
 <main id="main">
-  <a class="back" href="index.html#work">&larr; Back to projects</a>
-
-  <h1>The Ticket</h1>
-  <p class="lede">A digital dine in menu for Din Tai Fung, built from what I see on every shift as a food runner. Guests scan a QR code, order in their own language, and a server confirms the order before it reaches the kitchen.</p>
-  <div class="tags">
-    <span class="tag">UI/UX</span>
-    <span class="tag">Unofficial concept</span>
-  </div>
-  <p class="note">This is an unofficial concept project. It is not affiliated with, endorsed by, or made for Din Tai Fung. The Din Tai Fung name, logo, menu items, and food photos belong to Din Tai Fung and appear here only to show the design idea.</p>
-  <br>
-
-  <figure class="wide">
-    <img src="images/the-ticket/all-screens.webp" alt="All five screens of the digital menu side by side: language selection, appetizers, wontons, review order, and order submitted." width="2400" height="918">
-    <figcaption>The full ordering flow, from picking a language to order submitted.</figcaption>
-  </figure>
-
-  <dl class="facts">
-    <div><dt>Type</dt><dd>Unofficial concept, personal project</dd></div>
-    <div><dt>Timeline</dt><dd>Jun to Jul 2026<span class="sub">Updated Nov 2026</span></dd></div>
-    <div><dt>My role</dt><dd>Solo. Research, UX, and UI design</dd></div>
-    <div><dt>Tools</dt><dd>Figma</dd></div>
-  </dl>
-
-  <section>
-    <h2>The problem</h2>
-    <p>Din Tai Fung guests order on a paper sheet. They find the dish, write a number next to it, and hand it to their server. It sounds simple. On the floor, it breaks in a few ways I see all the time.</p>
-    <ul>
-      <li><strong>Similar items get mixed up.</strong> Spicy Wontons and Wonton Soup sit close together and look almost the same on paper. Guests mark the wrong one, and the wrong dish goes out.</li>
-      <li><strong>Handwriting is hard to read.</strong> A messy number turns a 1 into a 7, and nobody catches it until the food lands.</li>
-      <li><strong>Not every guest reads English.</strong> A lot of our guests are more comfortable in another language, and a paper sheet in one language leaves them guessing.</li>
-    </ul>
-    <p>I started this project during the 2026 World Cup, when Seattle filled up with fans from all over the world. A lot of them had a language barrier and needed pictures to know what they were ordering. Servers could tell them to scan the QR code for pictures, but that explanation often got lost in translation too.</p>
-    <p>Pictures don't need a translator. That idea shaped the whole design.</p>
-    <p>As a food runner, I'm the one carrying the wrong dish to the table. I wanted to fix the problem where it starts, at the moment of ordering.</p>
+  <section class="cs-hero">
+    <a class="cs-back" href="index.html#work">&larr; All work</a>
+    <h1 class="cs-title">The Ticket</h1>
+    <p class="cs-one">A QR code menu that shows guests what they're ordering, in their own language, so the wrong dish stops reaching the table.</p>
+    <div class="tags"><span class="tag">UI/UX</span><span class="tag">Unofficial concept</span></div>
+    <p class="cs-note">Unofficial concept project. Not affiliated with, endorsed by, or made for Din Tai Fung. The Din Tai Fung name, logo, menu items, and food photos belong to Din Tai Fung and appear here only to show the design idea.</p>
+    <dl class="cs-facts">
+      <div><dt>Year</dt><dd>Jun to Jul 2026<span class="sub">Updated Nov 2026</span></dd></div>
+      <div><dt>Role</dt><dd>Solo project</dd></div>
+      <div><dt>Tools</dt><dd>Figma</dd></div>
+      <div><dt>Focus</dt><dd>UX research, UI design</dd></div>
+    </dl>
+    <div class="cs-cover"><img class="" loading="lazy" decoding="async" src="images/the-ticket/all-screens.webp" width="2400" height="918" alt="All five screens of the digital menu side by side: language selection, appetizers, wontons, review order, and order submitted."></div>
   </section>
 
-  <section>
-    <h2>Design decisions</h2>
-
-    <h3><span class="num">1.</span> Add digital, don't replace paper</h3>
-    <p>Some guests love the paper sheet, and it's part of the experience. So the QR menu sits next to it as an option. Guests who want it can use it. Guests who don't never have to.</p>
-
-    <h3><span class="num">2.</span> A server checks every order</h3>
-    <p>Orders don't go straight to the kitchen. They go to the server, who confirms them at the table. That keeps the human part of service and catches mistakes before they become wrong dishes.</p>
-
-    <h3><span class="num">3.</span> Photos and short descriptions</h3>
-    <p>Every item has a photo and one line about what it is. Spicy Wontons say "No broth." Wonton Soup says "clear broth with green onion." Two dishes that looked the same on paper now look clearly different.</p>
-
-    <h3><span class="num">4.</span> Language first</h3>
-    <p>The first screen asks guests to pick a language: English, Spanish, Japanese, Vietnamese, or Traditional Chinese. Everything after that is in the language they chose.</p>
-
-    <h3><span class="num">5.</span> Dietary info up front</h3>
-    <p>Badges mark guest favorites, gluten free, vegan, and vegetarian dishes. A note on the review screen reminds guests that the kitchen uses shared equipment, so no item is guaranteed allergen free.</p>
-  </section>
-
-  <section>
-    <h2>The flow</h2>
-
-    <div class="screen">
-      <img loading="lazy" decoding="async" src="images/the-ticket/1-language.webp" alt="Language selection screen with English selected and options for Spanish, Japanese, Vietnamese, and Traditional Chinese." width="981" height="1920">
-      <div><h4><span class="num">1.</span> Pick a language</h4><p>Guests choose their language before anything else, so the whole menu makes sense from the start.</p></div>
-    </div>
-
-    <div class="screen">
-      <img loading="lazy" decoding="async" src="images/the-ticket/2-appetizers.webp" alt="Appetizers screen showing table number, guest count, dietary badges, category tabs, and items with quantity controls." width="981" height="1920">
-      <div><h4><span class="num">2.</span> Browse the menu</h4><p>The top shows the guest name, table, and party size. Category tabs jump between sections. Each item has a photo, price, badges, and a quantity control.</p></div>
-    </div>
-
-    <div class="screen">
-      <img loading="lazy" decoding="async" src="images/the-ticket/3-wontons.webp" alt="Wontons screen with Shrimp and Kurobuta Pork Spicy Wontons, Chicken Spicy Wontons, and Wonton Soup, each with a photo and description." width="981" height="1920">
-      <div><h4><span class="num">3.</span> Tell similar dishes apart</h4><p>This is the screen that fixes the biggest mixup. Spicy Wontons and Wonton Soup sit in the same section, but the photos and descriptions make the difference obvious.</p></div>
-    </div>
-
-    <div class="screen">
-      <img loading="lazy" decoding="async" src="images/the-ticket/4-review.webp" alt="Review order screen listing each item with quantity, subtotal, taxes, total, and Submit to server and Edit order buttons." width="981" height="1920">
-      <div><h4><span class="num">4.</span> Review the order</h4><p>Guests see every item, quantity, and the total before sending. "Submit to server" makes it clear the order goes to a person first, not straight to the kitchen.</p></div>
-    </div>
-
-    <div class="screen">
-      <img loading="lazy" decoding="async" src="images/the-ticket/5-confirmation.webp" alt="Order submitted screen with a green checkmark, table number, order number, item count, total, and a back to main menu button." width="981" height="1920">
-      <div><h4><span class="num">5.</span> Confirmation</h4><p>Guests get an order number and a summary, plus a reminder that their server will confirm at the table. If they want more, they can go back to the menu.</p></div>
+  <section class="cs-sec">
+    <header><p class="cs-num">(01)</p><h2>Overview</h2></header>
+    <div class="cs-body">
+      <p class="cs-lead">I started this project during the 2026 World Cup, when Seattle filled up with fans from all over the world. A lot of them had a language barrier and needed pictures to know what they were ordering.</p>
+      <p>Din Tai Fung guests order on a paper sheet. Servers could tell them to scan the QR code for pictures, but that explanation often got lost in translation too. As a food runner, I'm the one carrying the wrong dish to the table. So I designed a digital menu that fixes the problem at the moment of ordering.</p>
+      <p>Pictures don't need a translator. That idea shaped the whole design.</p>
     </div>
   </section>
 
-  <section>
-    <h2>What's next</h2>
-    <ul>
-      <li>Test the flow with coworkers and a few guests, and see where they hesitate.</li>
-      <li>Compare how often orders go wrong on paper vs digital.</li>
-      <li>Add a way for guests to add items mid meal without starting over.</li>
-    </ul>
+  <section class="cs-sec">
+    <header><p class="cs-num">(02)</p><h2>The issue</h2></header>
+    <div class="cs-body">
+      <div class="cs-cards">
+        <div class="cs-card"><span class="k">01</span><h3>Look alike dishes</h3><p>Spicy Wontons and Wonton Soup sit close together and look almost the same on paper. Guests mark the wrong one, and the wrong dish goes out.</p></div>
+        <div class="cs-card"><span class="k">02</span><h3>Messy handwriting</h3><p>A rushed number turns a 1 into a 7, and nobody catches it until the food lands on the table.</p></div>
+        <div class="cs-card"><span class="k">03</span><h3>One language</h3><p>The sheet is in English. Guests who are more comfortable in another language end up guessing.</p></div>
+      </div>
+    </div>
   </section>
 
-  <section>
-    <h2>What I learned</h2>
-    <ul>
-      <li><strong>The best problems are the ones you live.</strong> I didn't need to guess what goes wrong. I see it every shift.</li>
-      <li><strong>Small details prevent big mistakes.</strong> One line like "No broth" does more than a whole redesign of the layout.</li>
-      <li><strong>Keep the people in the loop.</strong> Server confirmation makes the tech support service instead of replacing it.</li>
-    </ul>
+  <section class="cs-sec">
+    <header><p class="cs-num">(03)</p><h2>Research</h2></header>
+    <div class="cs-body">
+      <p>I documented pain points during my own food running shifts: where orders went wrong, what guests asked about, and which dishes got mixed up most.</p>
+      <p class="cs-label">Problem statements &rarr; insights</p>
+      <table class="cs-map">
+        <tr><td>Guests mix up Spicy Wontons and Wonton Soup</td><td class="arrow">&rarr;</td><td>A photo and one line description on every item</td></tr>
+        <tr><td>Handwritten numbers get misread</td><td class="arrow">&rarr;</td><td>Tap to add quantities, no handwriting</td></tr>
+        <tr><td>Guests who don't read English guess</td><td class="arrow">&rarr;</td><td>Pick a language before anything else</td></tr>
+        <tr><td>Mistakes reach the kitchen before anyone catches them</td><td class="arrow">&rarr;</td><td>A server confirms every order at the table</td></tr>
+        <tr><td>Some guests love the paper sheet</td><td class="arrow">&rarr;</td><td>Digital sits next to paper, not instead of it</td></tr>
+      </table>
+    </div>
   </section>
+
+  <section class="cs-sec">
+    <header><p class="cs-num">(04)</p><h2>The product</h2></header>
+    <div class="cs-body">
+      <div class="cs-cards">
+        <div class="cs-card"><span class="k">01</span><h3>Language first</h3><p>The first screen asks guests to pick English, Spanish, Japanese, Vietnamese, or Traditional Chinese. Everything after follows their choice.</p></div>
+        <div class="cs-card"><span class="k">02</span><h3>Photos that tell dishes apart</h3><p>Spicy Wontons say "No broth." Wonton Soup says "clear broth with green onion." Two dishes that looked the same now look clearly different.</p></div>
+        <div class="cs-card"><span class="k">03</span><h3>Server confirms</h3><p>Orders go to the server, not straight to the kitchen. That keeps the human part of service and catches mistakes early.</p></div>
+      </div>
+      <p>Badges mark guest favorites, gluten free, vegan, and vegetarian dishes, and the review screen reminds guests that the kitchen uses shared equipment.</p>
+    </div>
+  </section>
+
+  <section class="cs-sec">
+    <header><p class="cs-num">(05)</p><h2>The flow</h2></header>
+    <div class="cs-body">
+      <div class="cs-flow" style="grid-template-columns: repeat(3, 1fr)"><img class="" loading="lazy" decoding="async" src="images/the-ticket/1-language.webp" width="981" height="1920" alt="Language selection screen with five languages"><img class="" loading="lazy" decoding="async" src="images/the-ticket/2-appetizers.webp" width="981" height="1920" alt="Appetizers screen with table info, dietary badges, and quantity controls"><img class="" loading="lazy" decoding="async" src="images/the-ticket/3-wontons.webp" width="981" height="1920" alt="Wontons screen showing spicy wontons and wonton soup with photos and descriptions"></div>
+      <p class="cs-cap"><b>1.</b> Pick a language, then browse. The wontons screen puts the two most mixed up dishes side by side, with photos and descriptions that make the difference obvious.</p>
+      <div class="cs-flow" style="grid-template-columns: repeat(2, 1fr); max-width: 66%"><img class="" loading="lazy" decoding="async" src="images/the-ticket/4-review.webp" width="981" height="1920" alt="Review order screen with items, total, and Submit to server button"><img class="" loading="lazy" decoding="async" src="images/the-ticket/5-confirmation.webp" width="981" height="1920" alt="Order submitted screen with order number and summary"></div>
+      <p class="cs-cap"><b>2.</b> Review and send to your server. "Submit to server" makes it clear a person checks the order first. Guests get an order number and can go back for more.</p>
+    </div>
+  </section>
+
+  <section class="cs-sec">
+    <header><p class="cs-num">(06)</p><h2>What's next</h2></header>
+    <div class="cs-body">
+      <div class="cs-two">
+        <div class="cs-card"><h3>Next steps</h3><ul><li>Test the flow with coworkers and a few guests, and see where they hesitate.</li><li>Compare how often orders go wrong on paper vs digital.</li><li>Let guests add items mid meal without starting over.</li></ul></div>
+        <div class="cs-card"><h3>What I learned</h3><ul><li>The best problems are the ones you live. I see this one every shift.</li><li>Small details prevent big mistakes. One line like "No broth" does a lot.</li><li>Keep people in the loop. Server confirmation supports service instead of replacing it.</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <a class="cs-next" href="by-witness.html"><p class="cs-label">Next project</p><span class="t" style="view-transition-name: bw-title">By Witness <span>&rarr;</span></span></a>
 </main>
 
 <footer id="footer">
