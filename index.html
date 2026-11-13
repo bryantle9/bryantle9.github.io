@@ -218,6 +218,31 @@
   a.banner::after, .bw-banner::after { content: "View case study \2192"; position: absolute; right: 16px; bottom: 16px; background: var(--cream); color: var(--ink); font-weight: 600; font-size: 14px; padding: 8px 14px; border-radius: 999px; opacity: 0; transform: translateY(6px); transition: opacity 0.2s ease, transform 0.2s ease; z-index: 5; box-shadow: 0 4px 14px rgba(0,0,0,0.12); }
   a.banner:hover::after, .bw-banner:hover::after, a.banner:focus-visible::after, .bw-banner:focus-visible::after { opacity: 1; transform: none; }
   @media (hover: none) { a.banner::after, .bw-banner::after { opacity: 1; transform: none; } }
+
+  /* revamp 2: hero and about */
+  #hero { overflow-x: clip; overflow-y: visible; }
+  body > nav { background: transparent !important; background-image: none !important; transition: background-color 0.25s ease, box-shadow 0.25s ease; }
+  body > nav.scrolled { background: rgba(251,248,241,0.82) !important; -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); box-shadow: 0 1px 0 var(--line); }
+  #hero { text-align: left; padding: 70px 6vw 120px; min-height: min(88vh, 900px); display: flex; align-items: center; }
+  #hero .hero-inner { max-width: 1240px; width: 100%; }
+  .blobs { position: absolute; inset: -160px -5% -10%; -webkit-mask-image: linear-gradient(to bottom, #000 45%, transparent 92%); mask-image: linear-gradient(to bottom, #000 45%, transparent 92%); z-index: 0; pointer-events: none; filter: blur(60px); opacity: 0.55; }
+  .blobs span { position: absolute; border-radius: 50%; }
+  .blobs span:nth-child(1) { width: 46vw; height: 46vw; left: 48%; top: 2%; background: #A9C7B9; }
+  .blobs span:nth-child(2) { width: 40vw; height: 40vw; left: 8%; top: 38%; background: #E8D3B5; }
+  .blobs span:nth-child(3) { width: 30vw; height: 30vw; left: 70%; top: 50%; background: #E4CFC6; }
+  .grain { -webkit-mask-image: linear-gradient(to bottom, transparent, #000 12%, #000 70%, transparent); mask-image: linear-gradient(to bottom, transparent, #000 12%, #000 70%, transparent); opacity: 0.22; }
+  .hero-meta { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); font-weight: 600; margin-bottom: 48px; }
+  h1.headline { text-align: left; margin: 0 0 32px; max-width: 15ch; font-size: clamp(52px, 8.6vw, 128px); line-height: 0.98; letter-spacing: -0.02em; font-weight: 700; }
+  h1.headline .soft { color: #8A857A; }
+  .lede { text-align: left; margin: 0 0 36px; max-width: 36em; font-size: clamp(18px, 1.9vw, 22px); color: #4A473F; }
+  .hero-ctas { justify-content: flex-start; }
+  .about-grid { grid-template-columns: 1fr 2fr; align-items: start; }
+  .about-statement { font-family: 'Newsreader', serif; font-weight: 500; font-size: clamp(26px, 3vw, 40px); line-height: 1.22; letter-spacing: -0.01em; max-width: 26ch; color: var(--ink); }
+  .about-statement .soft { color: #8A857A; }
+  .about-facts { grid-template-columns: repeat(4, 1fr); }
+  @media (max-width: 760px) { #hero { min-height: 0; padding: 50px 6vw 90px; } .hero-meta { flex-direction: column; gap: 6px; margin-bottom: 30px; } .about-facts { grid-template-columns: 1fr 1fr; } .about-statement { max-width: none; } }
+  @media (prefers-reduced-motion: no-preference) { .blobs span { animation: drift 24s ease-in-out infinite alternate; } .blobs span:nth-child(2) { animation-duration: 30s; } .blobs span:nth-child(3) { animation-duration: 36s; } }
+  @keyframes drift { from { transform: translate(0,0); } to { transform: translate(4vw, -3vw); } }
   /* revamp: shared */
   body { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.2 0 0 0 0 0.18 0 0 0 0 0.14 0 0 0 0.07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p)'/%3E%3C/svg%3E"); background-attachment: fixed; }
   nav { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.2 0 0 0 0 0.18 0 0 0 0 0.14 0 0 0 0.07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p)'/%3E%3C/svg%3E"); background-attachment: fixed; }
@@ -249,12 +274,12 @@
 </nav>
 
 <section id="hero">
-  <div class="glow"></div>
+  <div class="blobs" aria-hidden="true"><span></span><span></span><span></span></div>
   <div class="grain"></div>
   <div class="hero-inner reveal stagger">
-    <p class="eyebrow"><span class="me">Bryant Le</span> <span class="dot">&middot;</span> UX design and data <span class="dot">&middot;</span> Seattle</p>
-    <h1 class="headline serif">I design from problems I see <em>firsthand.</em></h1>
-    <p class="lede">I'm Bryant, an Informatics student at the UW iSchool. I've run food at Din Tai Fung since 2024. Watching menus, tickets, and language barriers trip people up taught me to design around real moments. Next, I'm adding data to back those calls.</p>
+    <div class="hero-meta"><span>UX design and data</span><span>Informatics &middot; University of Washington &middot; Seattle</span></div>
+    <h1 class="headline serif">I design for the moments <span class="soft">people get stuck.</span></h1>
+    <p class="lede">I'm Bryant. I've designed a restaurant ordering app, led a team building a detective game, and I'm learning Python so my design calls come with data behind them.</p>
     <div class="hero-ctas"><a class="cta" href="#work">See my work</a><a class="cta ghost" href="contact.html">Get in touch</a></div>
   </div>
 </section>
@@ -387,15 +412,13 @@
 
 <section id="about">
   <div class="about-grid reveal stagger">
-    <div><p class="sec-num">02 &middot; About</p><h2 class="serif">About</h2><p class="say-it">Bryant Le <span>[BRY-ant LEY]</span></p></div>
-    <div class="about-body">
-      <p>I'm a first generation college student studying Informatics at the UW iSchool. I've worked in food service since 2022, from a concession stand to a cafe to Din Tai Fung. That work taught me to read a room fast and spot what slows people down.</p>
-      <p>Right now I'm learning Python and building my first data project, so my design calls come with numbers behind them.</p>
-    </div>
+    <div class="about-side"><p class="sec-num">02 &middot; About</p><p class="say-it">Bryant Le <span>[BRY-ant LEY]</span></p></div>
+    <p class="about-statement">I pay attention to where people get stuck. <span class="soft">Four years in food service taught me to read a room fast. Running the budget for a campus club taught me to plan around real numbers. Leading a game team taught me to make the call. Python is next.</span></p>
     <dl class="about-facts">
+      <div><dt>Studying</dt><dd>BS Informatics</dd></div>
+      <div><dt>Graduating</dt><dd>June 2028</dd></div>
       <div><dt>Based in</dt><dd>Seattle, WA</dd></div>
-      <div><dt>Studying</dt><dd>BS Informatics, UW<span class="sub">Graduating June 2028</span></dd></div>
-      <div><dt>Speaks</dt><dd>English, Vietnamese<span class="sub">Spanish, limited working</span></dd></div>
+      <div><dt>Languages</dt><dd>English, Vietnamese<span class="sub">Spanish, limited</span></dd></div>
     </dl>
   </div>
 
@@ -418,6 +441,9 @@
 </footer>
 
 <script>
+  const navEl = document.querySelector('body > nav');
+  const onScroll = () => navEl.classList.toggle('scrolled', window.scrollY > 10);
+  window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
   const revealEls = document.querySelectorAll('.reveal');
   document.querySelectorAll('.reveal.stagger').forEach(g => [...g.children].forEach((c, i) => c.style.setProperty('--i', i)));
   const io = new IntersectionObserver((entries) => {
