@@ -14,7 +14,7 @@
     --ink-soft: #6C6A5F;
     --line: #E3DECD;
     --glow: #7FB0A0;
-    --accent: #C0532D;
+    --accent: #B44B28;
     --banner: #55575E;
   }
 
@@ -47,18 +47,19 @@
 
   /* HERO */
   #hero { position: relative; text-align: center; padding: 60px 6vw 100px; overflow: hidden; }
+  #hero .glow { top: auto; bottom: 40px; }
   .glow {
     position: absolute;
-    top: 8%;
+    top: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 640px;
-    height: 640px;
-    background: radial-gradient(circle, var(--glow) 0%, rgba(127,176,160,0) 70%);
-    filter: blur(14px);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle closest-side, var(--glow) 0%, rgba(127,176,160,0) 100%);
     opacity: 0.55;
     z-index: 0;
   }
+  .grain { position: absolute; inset: 0; z-index: 0; pointer-events: none; opacity: 0.35; mix-blend-mode: multiply; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.3 0 0 0 0 0.28 0 0 0 0 0.24 0 0 0 0.9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); -webkit-mask-image: radial-gradient(circle closest-side at 50% 55%, #000 0%, transparent 100%); mask-image: radial-gradient(circle closest-side at 50% 55%, #000 0%, transparent 100%); }
   .hero-inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
   h1.name {
     font-family: 'Newsreader', serif;
@@ -143,7 +144,8 @@
   .tags { display: flex; gap: 12px; margin-bottom: 18px; flex-wrap: wrap; }
   .tag { border: 1.5px solid var(--accent); color: var(--accent); font-weight: 600; font-size: 14px; padding: 6px 16px; border-radius: 999px; }
   .p-desc { font-size: 17px; color: var(--ink-soft); max-width: 460px; }
-  .p-link { display: inline-block; margin-top: 18px; font-weight: 600; color: var(--accent); text-decoration: underline; text-underline-offset: 4px; }
+  .p-link { display: inline-block; margin-top: 22px; font-weight: 600; font-size: 15px; color: var(--ink); text-decoration: none; border: 1.5px solid var(--ink); padding: 10px 20px; border-radius: 999px; transition: background 0.2s ease, color 0.2s ease, transform 0.12s ease; }
+  .p-link:hover { background: var(--ink); color: var(--cream); }
   .bw-banner { display: block; border-radius: 10px; overflow: hidden; aspect-ratio: 5 / 3; background: #F1ECE4; border: 1px solid var(--line); }
   .bw-banner img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
   .bw-banner:hover img { transform: scale(1.02); }
@@ -151,21 +153,34 @@
 
   footer { text-align: center; padding: 60px 6vw 90px; }
   footer .end { font-family: 'Newsreader', serif; font-style: italic; font-size: 21px; margin-bottom: 10px; }
+  .cta { display: inline-block; background: var(--ink); color: var(--cream); text-decoration: none; font-weight: 600; font-size: 16px; padding: 12px 24px; border-radius: 999px; margin: 6px 0 20px; transition: background 0.2s ease, transform 0.12s ease; }
+  .cta:hover { background: var(--accent); }
   footer .email { display: inline-block; font-size: 16px; text-decoration: underline; text-underline-offset: 4px; margin-bottom: 6px; }
   footer .note { display: block; font-size: 12px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 6px; }
 
   a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
-  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.8s ease, transform 0.8s ease; }
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s cubic-bezier(.16,1,.3,1), transform 0.6s cubic-bezier(.16,1,.3,1); }
   .reveal.in { opacity: 1; transform: translateY(0); }
-  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+  .reveal.stagger { opacity: 1; transform: none; }
+  .reveal.stagger > * { opacity: 0; transform: translateY(16px); transition: opacity 0.6s cubic-bezier(.16,1,.3,1), transform 0.6s cubic-bezier(.16,1,.3,1); transition-delay: calc(var(--i, 0) * 60ms); }
+  .reveal.stagger.in > * { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .reveal, .reveal.stagger > * { opacity: 1; transform: none; transition: none; } }
+
+  /* shared polish */
+  h1, h2, h3, .p-title, .name { text-wrap: balance; }
+  p, li { text-wrap: pretty; }
+  .btn:active, .download:active, .p-link:active, .cta:active { transform: scale(0.97); }
+  a.banner:active, .bw-banner:active { transform: scale(0.99); }
+  .facts dd, .row { font-variant-numeric: tabular-nums; }
 </style>
 </head>
 <body>
 
 <nav>
-  <div class="logo">b.</div>
+  <a class="logo" href="index.html" style="text-decoration:none">b.</a>
   <div class="nav-links">
+    <a href="#work">work</a>
     <a href="resume.html" id="resume-link">resume</a>
     <a href="contact.html">contact me</a>
   </div>
@@ -173,15 +188,16 @@
 
 <section id="hero">
   <div class="glow"></div>
-  <div class="hero-inner reveal">
+  <div class="grain"></div>
+  <div class="hero-inner reveal stagger">
     <h1 class="name serif">bryant le</h1>
     <div class="pronounce">[BRY-ant LEY]</div>
     <div class="rule"></div>
     <div class="points">
-      <p><span class="num serif">1.</span> Turns real-world problems into usable solutions</p>
-      <p><span class="num serif">2.</span> Student at the University of Washington iSchool</p>
+      <p><span class="num serif">1.</span> Designs from problems I see firsthand, like the paper menus I run food for</p>
+      <p><span class="num serif">2.</span> Informatics student at the University of Washington iSchool</p>
     </div>
-    <div class="look-prompt">Have a look at my work!</div>
+    <div class="look-prompt">Two case studies below</div>
     <div class="arrow-down">&#8595;</div>
   </div>
 </section>
@@ -192,7 +208,7 @@
     <div class="updated">Updated November 2026</div>
   </div>
 
-  <div class="project reveal">
+  <div class="project reveal stagger">
     <a class="banner" href="the-ticket.html" aria-label="Read The Ticket case study. Illustration of a receipt and QR code beside two overlapping phone screens showing the redesigned Din Tai Fung ordering flow">
       <svg class="props" viewBox="0 0 640 384" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
         <!-- big menu board on the wall -->
@@ -288,15 +304,14 @@
       <h3 class="p-title serif">The Ticket</h3>
       <div class="tags">
         <span class="tag">UI/UX</span>
-        <span class="tag">Product</span>
         <span class="tag">Unofficial concept</span>
       </div>
-      <p class="p-desc">An unofficial concept that redesigns Din Tai Fung's handwritten paper ordering system into a guided QR-code digital menu, built from firsthand experience running food on the floor.</p>
+      <p class="p-desc">Redesigns Din Tai Fung's handwritten paper ordering system into a QR code menu with photos and five languages, built from firsthand experience running food on the floor.</p>
       <a class="p-link" href="the-ticket.html">Read the case study &rarr;</a>
     </div>
   </div>
 
-  <div class="project reveal">
+  <div class="project reveal stagger">
     <a class="bw-banner" href="by-witness.html" aria-label="Read the By Witness case study">
       <img src="images/by-witness/reveal.png" alt="By Witness reveal screen, the player's sketch stamped Wrong Face next to the real robber">
     </a>
@@ -313,7 +328,9 @@
 </section>
 
 <footer id="footer">
-  <div class="end serif">You reached the end!</div>
+  <div class="end serif">Looking for a UX or data intern for summer 2027?</div>
+  <a class="cta" href="contact.html">Get in touch</a>
+  <br>
   <a class="email" href="mailto:bryantle2000@gmail.com" id="email-link">bryantle2000@gmail.com</a>
   <br>
 <a class="linkedin" href="https://www.linkedin.com/in/le-bryant" target="_blank" rel="noopener">linkedin.com/in/le-bryant</a>
@@ -321,9 +338,10 @@
 
 <script>
   const revealEls = document.querySelectorAll('.reveal');
+  document.querySelectorAll('.reveal.stagger').forEach(g => [...g.children].forEach((c, i) => c.style.setProperty('--i', i)));
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => {
-      e.target.classList.toggle('in', e.isIntersecting);
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
     });
   }, { threshold: 0.15 });
   revealEls.forEach(el => io.observe(el));

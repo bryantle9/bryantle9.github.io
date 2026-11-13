@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,500;0,600;0,700;0,800;1,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root { --cream: #FBF8F1; --ink: #1E1D19; --ink-soft: #6C6A5F; --line: #E3DECD; --accent: #C0532D; }
+  :root { --cream: #FBF8F1; --ink: #1E1D19; --ink-soft: #6C6A5F; --line: #E3DECD; --accent: #B44B28; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { background: var(--cream); color: var(--ink); font-family: 'Work Sans', sans-serif; line-height: 1.65; }
   a { color: inherit; }
@@ -59,6 +59,14 @@
   footer { text-align: center; padding: 40px 6vw 90px; border-top: 1px solid var(--line); }
   footer .end { font-family: 'Newsreader', serif; font-style: italic; font-size: 21px; margin-bottom: 10px; }
   footer a { display: inline-block; font-size: 16px; text-decoration: underline; text-underline-offset: 4px; margin: 0 10px 6px; }
+
+  /* shared polish */
+  h1, h2, h3, .p-title, .name { text-wrap: balance; }
+  p, li { text-wrap: pretty; }
+  .btn:active, .download:active, .p-link:active, .cta:active { transform: scale(0.97); }
+  a.banner:active, .bw-banner:active { transform: scale(0.99); }
+  .facts dd, .row { font-variant-numeric: tabular-nums; }
+  img { background: #F1ECE3; }
 </style>
 </head>
 <body>
@@ -133,27 +141,27 @@
     <h2>The flow</h2>
 
     <div class="screen">
-      <img src="images/the-ticket/1-language.png" alt="Language selection screen with English selected and options for Spanish, Japanese, Vietnamese, and Traditional Chinese.">
+      <img loading="lazy" decoding="async" src="images/the-ticket/1-language.png" alt="Language selection screen with English selected and options for Spanish, Japanese, Vietnamese, and Traditional Chinese.">
       <div><h4><span class="num">1.</span> Pick a language</h4><p>Guests choose their language before anything else, so the whole menu makes sense from the start.</p></div>
     </div>
 
     <div class="screen">
-      <img src="images/the-ticket/2-appetizers.png" alt="Appetizers screen showing table number, guest count, dietary badges, category tabs, and items with quantity controls.">
+      <img loading="lazy" decoding="async" src="images/the-ticket/2-appetizers.png" alt="Appetizers screen showing table number, guest count, dietary badges, category tabs, and items with quantity controls.">
       <div><h4><span class="num">2.</span> Browse the menu</h4><p>The top shows the guest name, table, and party size. Category tabs jump between sections. Each item has a photo, price, badges, and a quantity control.</p></div>
     </div>
 
     <div class="screen">
-      <img src="images/the-ticket/3-wontons.png" alt="Wontons screen with Shrimp and Kurobuta Pork Spicy Wontons, Chicken Spicy Wontons, and Wonton Soup, each with a photo and description.">
+      <img loading="lazy" decoding="async" src="images/the-ticket/3-wontons.png" alt="Wontons screen with Shrimp and Kurobuta Pork Spicy Wontons, Chicken Spicy Wontons, and Wonton Soup, each with a photo and description.">
       <div><h4><span class="num">3.</span> Tell similar dishes apart</h4><p>This is the screen that fixes the biggest mixup. Spicy Wontons and Wonton Soup sit in the same section, but the photos and descriptions make the difference obvious.</p></div>
     </div>
 
     <div class="screen">
-      <img src="images/the-ticket/4-review.png" alt="Review order screen listing each item with quantity, subtotal, taxes, total, and Submit to server and Edit order buttons.">
+      <img loading="lazy" decoding="async" src="images/the-ticket/4-review.png" alt="Review order screen listing each item with quantity, subtotal, taxes, total, and Submit to server and Edit order buttons.">
       <div><h4><span class="num">4.</span> Review the order</h4><p>Guests see every item, quantity, and the total before sending. "Submit to server" makes it clear the order goes to a person first, not straight to the kitchen.</p></div>
     </div>
 
     <div class="screen">
-      <img src="images/the-ticket/5-confirmation.png" alt="Order submitted screen with a green checkmark, table number, order number, item count, total, and a back to main menu button.">
+      <img loading="lazy" decoding="async" src="images/the-ticket/5-confirmation.png" alt="Order submitted screen with a green checkmark, table number, order number, item count, total, and a back to main menu button.">
       <div><h4><span class="num">5.</span> Confirmation</h4><p>Guests get an order number and a summary, plus a reminder that their server will confirm at the table. If they want more, they can go back to the menu.</p></div>
     </div>
   </section>
