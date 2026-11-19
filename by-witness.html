@@ -167,7 +167,7 @@
   .cs-note { border-left: 3px solid var(--accent); padding: 4px 0 4px 18px; color: var(--ink-soft); font-size: 15px; max-width: 70ch; margin-top: 6px; }
   .loop { margin-top: 6px; }
   .cs-shots { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 22px; }
-  .cs-shots figure:last-child { grid-column: 1 / -1; max-width: calc(50% - 11px); }
+  .cs-shots figure:last-child { grid-column: 1 / -1; }
   .cs-shots .cs-cap { margin: 12px 0 28px; font-size: 15px; }
   @media (max-width: 860px) { .cs-shots { grid-template-columns: 1fr; } .cs-shots figure:last-child { max-width: none; } }
   @media (max-width: 860px) { .cs-sec { grid-template-columns: 1fr; padding: 64px 0; } .cs-sec > header { position: static; } .cs-facts { grid-template-columns: 1fr 1fr; } .cs-two { grid-template-columns: 1fr; } }
@@ -210,7 +210,7 @@
   <section class="cs-hero">
     <a class="cs-back" href="index.html#work">&larr; All work</a>
     <h1 class="cs-title">By Witness</h1>
-    <p class="cs-one">A story driven game where you play a sketch artist in a corrupt Old West town, and one wrong question can put an innocent man on a poster.</p>
+    <p class="cs-one">A story driven game where you play a new deputy and sketch artist in a corrupt Old West town, and one wrong question can put an innocent man on a poster.</p>
     <div class="tags"><span class="tag">Game Design</span><span class="tag">UI/UX</span><span class="tag">In progress</span></div>
     <dl class="cs-facts">
       <div><dt>Year</dt><dd>Oct 2026 to present<span class="sub">Wraps up end of fall quarter</span></dd></div>
@@ -218,14 +218,14 @@
       <div><dt>Team</dt><dd>Bryant Le, Matthew Nguyen, Kristy Le</dd></div>
       <div><dt>Tools</dt><dd>Figma<span class="sub">INFO 498, UW</span></dd></div>
     </dl>
-    <div class="cs-cover"><img class="" loading="lazy" decoding="async" src="images/by-witness/reveal.webp" width="1600" height="900" alt="The Reveal screen. The player's sketch stamped Wrong Face next to the real robber, with town trust going down."></div>
+    <div class="cs-cover"><img class="" loading="lazy" decoding="async" src="images/by-witness/reveal.webp" width="1600" height="900" alt="The Reveal screen. The player's sketch stamped Wrong Face next to the real robber."></div>
   </section>
 
   <section class="cs-sec">
     <header><p class="cs-num">(01)</p><h2>Overview</h2></header>
     <div class="cs-body">
       <p class="cs-lead">Most games about crime put you in charge. You catch the bad guy and the story ends. We wanted to flip that.</p>
-      <p>In By Witness, the truth depends on what scared, paid off, or confused people tell you. And the system around you rewards speed over getting it right. We wanted players to leave asking who actually decides what justice looks like, and what it costs to do the right thing when the easy thing pays off right now.</p>
+      <p>In By Witness, the truth depends on what scared and confused people tell you. Your boss, Sheriff Dunn, sits in on interviews and doubts anyone he thinks is beneath him. When he pushes, witnesses shut down and misremember. We wanted players to see how one officer's bias can put the wrong face on a poster and break a town's trust in the law.</p>
     </div>
   </section>
 
@@ -243,16 +243,15 @@
   <section class="cs-sec">
     <header><p class="cs-num">(03)</p><h2>Core loop</h2></header>
     <div class="cs-body">
-      <div class="loop" role="img" aria-label="Core loop. Every day you interview witnesses, take or refuse deals, and sketch the poster. Every week you lock in a suspect, see the reveal, and face harder cases.">
-        <div class="loop-row"><div class="loop-label">Every day</div><div class="steps">
-          <div class="step"><strong>Interview witnesses</strong><span>Open or leading questions</span></div><div class="arrow">&rarr;</div>
-          <div class="step"><strong>Take or refuse deals</strong><span>Bribes and moral choices</span></div><div class="arrow">&rarr;</div>
-          <div class="step"><strong>Sketch the poster</strong><span>Build the face from parts</span></div></div></div>
-        <div class="between">&darr; end of week</div>
-        <div class="loop-row"><div class="loop-label">Every week</div><div class="steps">
-          <div class="step"><strong>Lock in your suspect</strong><span>Compare notes, pick one</span></div><div class="arrow">&rarr;</div>
+      <div class="loop" role="img" aria-label="Core loop. For every case you do an initial interview at the scene, a secondary interview at the station while you sketch, and suspect identification alone at each witness's home. Then you see the reveal and move to the next case.">
+        <div class="loop-row"><div class="loop-label">Every case</div><div class="steps">
+          <div class="step"><strong>Initial interview</strong><span>At the scene, with another deputy</span></div><div class="arrow">&rarr;</div>
+          <div class="step"><strong>Secondary interview</strong><span>Sketch at the station while Dunn interjects</span></div><div class="arrow">&rarr;</div>
+          <div class="step"><strong>Suspect identification</strong><span>Alone at each witness's home</span></div></div></div>
+        <div class="between">&darr; end of case</div>
+        <div class="loop-row"><div class="loop-label">After every case</div><div class="steps">
           <div class="step key"><strong>The reveal</strong><span>See who got hurt and why</span></div><div class="arrow">&rarr;</div>
-          <div class="step"><strong>Harder cases</strong><span>More pressure next week</span></div></div></div>
+          <div class="step"><strong>Next case</strong><span>The town's secrets come out</span></div></div></div>
       </div>
     </div>
   </section>
@@ -262,22 +261,20 @@
     <div class="cs-body">
       <div class="cs-cards">
         <div class="cs-card"><span class="k">01</span><h3>Good questions vs fast questions</h3><p>Open questions get honest but vague answers. Leading questions get clear answers but can plant false details. The fastest option is also the riskiest.</p></div>
-        <div class="cs-card"><span class="k">02</span><h3>Bribes vs moral decisions</h3><p>Bribes are clearly wrong. Moral decisions have no right answer. If every choice were a bribe, players would refuse everything and feel good about it.</p></div>
-        <div class="cs-card"><span class="k">03</span><h3>A quota that rewards speed</h3><p>The quota counts posters, not correct posters. Nobody checks if you drew the right face. That pressure is what makes bribes tempting.</p></div>
+        <div class="cs-card"><span class="k">02</span><h3>The sheriff is a mechanic</h3><p>Dunn interrupts and doubts witnesses during the secondary interview. You choose when to step in. Let him push and the witness shuts down. Stand up to him and you risk upsetting your boss.</p></div>
+        <div class="cs-card"><span class="k">03</span><h3>Who gets believed</h3><p>Dunn is polite to wealthy residents and quick to dismiss everyone else. Suspect identification happens without him, so poorer townspeople finally open up to you.</p></div>
       </div>
     </div>
   </section>
 
   <section class="cs-sec">
-    <header><p class="cs-num">(05)</p><h2>One case, five screens</h2></header>
+    <header><p class="cs-num">(05)</p><h2>One case, three screens</h2></header>
     <div class="cs-body">
-      <p>Following Clara, a witness to a stagecoach robbery, through the whole game loop.</p>
+      <p>Following Clara, a witness to a stagecoach robbery, from interview to reveal.</p>
       <div class="cs-shots">
         <figure><div class="cs-flow"><img class="" loading="lazy" decoding="async" src="images/by-witness/interview.webp" width="1600" height="900" alt="Interview screen. Clara answers and the player picks between an open question and a leading question."></div><figcaption class="cs-cap"><b>1. Interview.</b> You ask if he had a scar. Now Clara remembers big scars across his face.</figcaption></figure>
-        <figure><div class="cs-flow"><img class="" loading="lazy" decoding="async" src="images/by-witness/the-deal.webp" width="1600" height="900" alt="The Deal screen with Take the deal and Refuse buttons."></div><figcaption class="cs-cap"><b>2. The deal.</b> Clara offers a sharp description if you leave her brother out of it. No right answer, but town trust moves either way.</figcaption></figure>
-        <figure><div class="cs-flow"><img class="" loading="lazy" decoding="async" src="images/by-witness/compare-notes.webp" width="1600" height="892" alt="Compare Notes screen with Clara's and Otis's notes and the conflicting scar circled."></div><figcaption class="cs-cap"><b>3. Compare notes.</b> Otis says there wasn't a scratch on him. Did your leading question plant that scar?</figcaption></figure>
-        <figure><div class="cs-flow"><img class="" loading="lazy" decoding="async" src="images/by-witness/sketch.webp" width="1600" height="888" alt="Sketch the Suspect screen with a wanted poster, witness panel, and quota counter."></div><figcaption class="cs-cap"><b>4. Sketch the suspect.</b> The witness panel flags the scar because you asked about it. The quota pushes you to post anyway.</figcaption></figure>
-        <figure><div class="cs-flow"><img class="" loading="lazy" decoding="async" src="images/by-witness/reveal.webp" width="1600" height="900" alt="The Reveal screen with the player's sketch stamped Wrong Face."></div><figcaption class="cs-cap"><b>5. The reveal.</b> Wrong face. A mob grabbed Silas, a drifter who matched your poster. The real robber is still out there.</figcaption></figure>
+        <figure><div class="cs-flow"><img class="" loading="lazy" decoding="async" src="images/by-witness/sketch.webp" width="1600" height="888" alt="Sketch the Suspect screen with a wanted poster and witness panel."></div><figcaption class="cs-cap"><b>2. Sketch the suspect.</b> The witness panel flags the scar because you asked about it. Do you trust it?</figcaption></figure>
+        <figure><div class="cs-flow"><img class="" loading="lazy" decoding="async" src="images/by-witness/reveal.webp" width="1600" height="900" alt="The Reveal screen with the player's sketch stamped Wrong Face."></div><figcaption class="cs-cap"><b>3. The reveal.</b> Wrong face. A mob grabbed Silas, a drifter who matched your poster. The real robber is still out there.</figcaption></figure>
       </div>
     </div>
   </section>
@@ -286,8 +283,8 @@
     <header><p class="cs-num">(06)</p><h2>How it changed</h2></header>
     <div class="cs-body">
       <div class="cs-two">
-        <div class="cs-card"><h3>Iterations</h3><ul><li>Started as "Likeness," a sketch artist drawing wanted posters. A fun mechanic with no message.</li><li>Added a social impact angle: a corrupt town and a system that rewards speed over truth.</li><li>Renamed it By Witness to focus on witnesses and unreliable memory.</li></ul></div>
-        <div class="cs-card"><h3>What I learned</h3><ul><li>Consequences teach better than rules.</li><li>A choice needs a cost on both sides.</li><li>The system is the message.</li><li>Leading a team means making calls.</li></ul></div>
+        <div class="cs-card"><h3>Iterations</h3><ul><li>Started as "Likeness," a sketch artist drawing wanted posters. A fun mechanic with no message.</li><li>Added a social impact angle: a corrupt town and a system that rewards speed over truth.</li><li>Renamed it By Witness to focus on witnesses and unreliable memory.</li><li>Cut the trust meter, bribes, and note taking. They pulled focus from the real message, so we rebuilt the loop around three interview stages and Sheriff Dunn.</li></ul></div>
+        <div class="cs-card"><h3>What I learned</h3><ul><li>Consequences teach better than rules.</li><li>A choice needs a cost on both sides.</li><li>Cutting features makes the message clearer.</li><li>The system is the message.</li><li>Leading a team means making calls.</li></ul></div>
       </div>
       <p class="cs-note">Playtesting is next. I'm walking classmates through these screens and will update this page with what I changed.</p>
     </div>
